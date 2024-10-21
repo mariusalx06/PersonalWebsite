@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
   
 });
 
+app.get("/latest-projects", (req, res) => {
+  res.render("latestprojects.ejs");
+  
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });

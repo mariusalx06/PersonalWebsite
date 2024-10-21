@@ -1,7 +1,7 @@
 const sidebar = $('#sidebar');
 const content = $('.side-content');
 const navButton = $('.sidebar-button');
-const profile = $('.navbar');
+const profile = $('.log-register');
 const rightPanel = $('.dropdown_menu');
 const theme = $('.toggle-theme');
 
@@ -37,7 +37,7 @@ theme.on('click', function(){
     $('.webdev').toggleClass("webdev-active");
     $('.btn-footer').toggleClass('btn-footer-theme');
     rightPanel.toggleClass('drop-theme');
-    profile.toggleClass('navbar-theme')
+    profile.toggleClass('log-register-theme')
     $('.sidebars').toggleClass('sidebar-active');
     $('.card-personal').toggleClass('card-personal-theme');
     $('.sidename').toggleClass('sidename-theme');
