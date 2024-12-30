@@ -1,0 +1,40 @@
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+
+.link svg {
+  font-size: 1.25rem;
+}
+
+.link span {
+  display: block;
+  font-size: 1rem;
+}
+
+.active {
+  background-color: #666666;
+}
+
+@media (max-width: 768px) {
+  .link {
+    margin: 0px;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .link svg {
+    font-size: 1rem;
+  }
+
+  .link span {
+    font-size: 0.8rem;
+  }
+}

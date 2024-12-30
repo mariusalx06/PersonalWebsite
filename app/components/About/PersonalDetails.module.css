@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  background-color: #333333;
+  border-radius: 1rem;
+  color: white;
+}
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  max-width: 90%; /* Prevents text from expanding too wide */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.textarea p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.textarea h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #ff8c00; /* You can adjust the color to your preference */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textarea {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .textarea h1 {
+    font-size: 1.5rem; /* Reduce font size on smaller screens */
+  }
+
+  .textarea p {
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
+  }
+}
