@@ -4,6 +4,7 @@
   max-width: 1200px;
   height: auto;
   margin: 0 auto;
+  margin-bottom: 5rem;
 }
 
 .parent {
@@ -52,27 +53,27 @@
 
 @media (max-width: 768px) {
   .parent {
-    grid-template-columns: repeat(3, 1fr); /* Adjust columns */
-    grid-template-rows: repeat(5, 1fr); /* Adjust rows */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 1rem;
   }
 
   .div1 {
-    grid-area: 1 / 1 / 2 / 4; /* Adjust grid area */
+    grid-area: 1 / 1 / 2 / 4;
   }
   .div2 {
-    grid-area: 2 / 1 / 3 / 4; /* Adjust grid area */
+    grid-area: 2 / 1 / 3 / 4;
   }
   .div3 {
-    grid-area: 3 / 2 / 5 / 4; /* Adjust grid area */
+    grid-area: 3 / 2 / 5 / 4;
   }
   .div4 {
-    grid-area: 3 / 1 / 4 / 2; /* Adjust grid area */
+    grid-area: 3 / 1 / 4 / 2;
   }
   .div5 {
-    grid-area: 4 / 1 / 5 / 2; /* Adjust grid area */
+    grid-area: 4 / 1 / 5 / 2;
   }
   .div6 {
-    grid-area: 5 / 1 / 6 / 4; /* Adjust grid area */
+    grid-area: 5 / 1 / 6 / 4;
   }
 }

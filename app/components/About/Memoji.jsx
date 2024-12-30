@@ -6,8 +6,8 @@ export default function Memoji() {
     <Image
       src="/memoji.png"
       alt="memoji of Marius Calin"
-      width={200}
-      height={200}
+      width={150}
+      height={150}
     />
   );
 }

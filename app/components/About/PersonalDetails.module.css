@@ -15,28 +15,42 @@
   object-fit: cover;
   width: 150px;
   height: 150px;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0rem;
 }
 
 .textarea {
-  max-width: 90%; /* Prevents text from expanding too wide */
+  max-width: 90%;
   text-align: center;
   margin-top: 1rem;
 }
 
 .textarea p {
   font-size: 1rem;
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 .textarea h1 {
   font-size: 2rem;
   margin: 0.5rem 0;
   font-weight: bold;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 204, 255, 1) 0%,
+    rgba(0, 123, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .highlight {
-  color: #ff8c00; /* You can adjust the color to your preference */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 204, 255, 1) 0%,
+    rgba(0, 123, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -57,10 +71,10 @@
   }
 
   .textarea h1 {
-    font-size: 1.5rem; /* Reduce font size on smaller screens */
+    font-size: 1.5rem;
   }
 
   .textarea p {
-    font-size: 0.9rem; /* Slightly smaller text on mobile */
+    font-size: 0.9rem;
   }
 }
