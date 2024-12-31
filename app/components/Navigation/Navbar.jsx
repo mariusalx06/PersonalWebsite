@@ -6,14 +6,14 @@ import SchoolIcon from "@mui/icons-material/School";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 
-export default function Navbar() {
-  const navItems = [
-    { href: "/", icon: PersonIcon, text: "About" },
-    { href: "/studies", icon: SchoolIcon, text: "Studies" },
-    { href: "/projects", icon: DeveloperModeIcon, text: "Projects" },
-    { href: "/contact", icon: ContactMailIcon, text: "Contact" },
-  ];
+const navItems = [
+  { href: "/", icon: PersonIcon, text: "About" },
+  { href: "/studies", icon: SchoolIcon, text: "Studies" },
+  { href: "/projects", icon: DeveloperModeIcon, text: "Projects" },
+  { href: "/contact", icon: ContactMailIcon, text: "Contact" },
+];
 
+export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navList}>

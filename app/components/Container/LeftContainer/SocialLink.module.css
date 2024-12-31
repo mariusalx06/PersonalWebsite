@@ -13,6 +13,40 @@
   transition: color 0.3s ease;
   color: black;
 }
+
 .bottomButton:hover .bottomIcon {
   color: #007bff;
+}
+
+.resumeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.resumeButton:hover {
+  background-color: #005582;
+}
+
+.resumeButton .bottomIcon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.whiteIcon {
+  color: white;
+  margin-right: 0.5rem;
+  font-size: 1.6rem;
 }

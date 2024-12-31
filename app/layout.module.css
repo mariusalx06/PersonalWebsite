@@ -13,12 +13,6 @@
   margin-left: 80px;
 }
 
-.leftSideBg {
-  width: 43%;
-  background-color: #e6dace;
-  height: 100%;
-}
-
 @media (max-width: 992px) {
   .wrapper {
     left: 45%;

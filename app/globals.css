@@ -16,8 +16,8 @@ body {
   margin: 0;
   background: linear-gradient(
     90deg,
-    rgba(230, 218, 206, 1) 43%,
-    rgba(255, 255, 255, 1) 43%
+    rgb(0, 70, 140) 43%,
+    /* Darker blue */ rgba(255, 255, 255, 1) 43%
   );
 }
 
@@ -49,7 +49,7 @@ button {
   body {
     background: linear-gradient(
       90deg,
-      rgba(230, 218, 206, 1) 35%,
+      rgba(0, 70, 140) 35%,
       rgba(255, 255, 255, 1) 35%
     );
     height: auto;

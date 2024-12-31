@@ -20,7 +20,7 @@ export default function LeftContainer() {
           className={styles.profileImage}
           priority
         />
-        <h1 className={styles.name}>Marius Calin</h1>
+        <h2 className={styles.name}>Marius Calin</h2>
       </div>
       <div className={styles.descriptionContainer}>
         <p>&lt;Junior&gt;</p>
@@ -28,33 +28,37 @@ export default function LeftContainer() {
       </div>
 
       <div className={styles.buttonContainer}>
-        <button className={styles.button}>
-          <CloudDownloadIcon className={styles.buttonIcon} />
+        {/* Resume Download Button styled as a SocialLink */}
+        <SocialLink
+          Icon={CloudDownloadIcon}
+          platform="Resume" // This platform triggers the download
+          ariaLabel="Download Resume"
+        >
           Resume
-        </button>
+        </SocialLink>
       </div>
 
       <div className={styles.bottomSide}>
         <SocialLink
           Icon={LinkedInIcon}
-          onClick={() => handleClick("LinkedIn")}
+          platform="LinkedIn"
           ariaLabel="LinkedIn"
-        />
+        >
+          LinkedIn
+        </SocialLink>
         <SocialLink
           Icon={WhatsAppIcon}
-          onClick={() => handleClick("WhatsApp")}
+          platform="WhatsApp"
           ariaLabel="WhatsApp"
-        />
-        <SocialLink
-          Icon={MailIcon}
-          onClick={() => handleClick("Mail")}
-          ariaLabel="Mail"
-        />
-        <SocialLink
-          Icon={PhoneIcon}
-          onClick={() => handleClick("Phone")}
-          ariaLabel="Phone"
-        />
+        >
+          WhatsApp
+        </SocialLink>
+        <SocialLink Icon={MailIcon} platform="Mail" ariaLabel="Mail">
+          Email
+        </SocialLink>
+        <SocialLink Icon={PhoneIcon} platform="Phone" ariaLabel="Phone">
+          Phone
+        </SocialLink>
       </div>
     </div>
   );
