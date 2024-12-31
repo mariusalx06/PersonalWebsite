@@ -1,8 +1,7 @@
 export default function Projects() {
   return (
     <div>
-      <h1>Next.JS</h1>
-      <p>Test</p>
+      <h1>Projects</h1>
     </div>
   );
 }

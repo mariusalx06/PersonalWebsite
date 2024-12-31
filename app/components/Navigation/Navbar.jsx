@@ -1,40 +1,26 @@
-"use client";
+import NavItem from "./NavItem";
+import styles from "./Navbar.module.css";
+
 import PersonIcon from "@mui/icons-material/Person";
 import SchoolIcon from "@mui/icons-material/School";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
-import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
-
-import styles from "./Navbar.module.css";
-import NavItem from "./NavItem";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 
 export default function Navbar() {
+  const navItems = [
+    { href: "/", icon: PersonIcon },
+    { href: "/studies", icon: SchoolIcon },
+    { href: "/projects", icon: DeveloperModeIcon },
+    { href: "/contact", icon: ContactMailIcon },
+  ];
+
   return (
-    <div className={styles.navbar}>
-      <div className={styles.header}>
-        <div className={styles.left}>
-          <div className={styles.mc}>
-            <p>MC</p>
-          </div>
-          <div className={styles.rightText}>
-            <p className={styles.name}>Marius Calin</p>
-            <p className={styles.title}>Web Developer</p>
-          </div>
-        </div>
-
-        <div className={styles.right}>
-          <NavItem
-            href="/contact"
-            icon={PermContactCalendarIcon}
-            label="Contact"
-          />
-        </div>
-      </div>
-
-      <div className={styles.navLinks}>
-        <NavItem href="/" icon={PersonIcon} label="About" />
-        <NavItem href="/studies" icon={SchoolIcon} label="Studies" />
-        <NavItem href="/projects" icon={DeveloperModeIcon} label="Projects" />
-      </div>
-    </div>
+    <nav className={styles.navbar}>
+      <ul className={styles.navList}>
+        {navItems.map(({ href, icon, text, isExternal }) => (
+          <NavItem key={href} href={href} icon={icon} isExternal={isExternal} />
+        ))}
+      </ul>
+    </nav>
   );
 }

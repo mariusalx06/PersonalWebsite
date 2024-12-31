@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mainContainer {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  margin-left: 80px;
+}
+
+.leftSideBg {
+  width: 43%;
+  background-color: #e6dace;
+  height: 100%;
+}
+
+.rightSideBg {
+  width: 57%;
+  background-color: white;
+  height: auto;
+}

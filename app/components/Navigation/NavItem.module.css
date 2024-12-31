@@ -1,40 +1,60 @@
-.link {
+.navItem {
   display: flex;
   align-items: center;
-  justify-content: center;
+  border-radius: 8px;
+  padding: 8px 0px;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.navItem.active {
+  background-color: #7f6f61;
+  color: white;
+}
+
+.navLink {
   text-decoration: none;
-  color: inherit;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  white-space: nowrap;
-  flex-wrap: wrap;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 10px;
 }
 
-.link svg {
-  font-size: 1.25rem;
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 8px;
+  position: relative;
+  transition: background-color 0.3s ease;
 }
 
-.link span {
-  display: block;
-  font-size: 1rem;
+.icon {
+  font-size: 24px;
 }
 
-.active {
-  background-color: #666666;
+.iconWrapperActive .icon {
+  color: white;
 }
 
-@media (max-width: 768px) {
-  .link {
-    margin: 0px;
-    padding: 0.3rem 0.8rem;
-  }
+.text {
+  margin-left: 10px;
+  margin-bottom: 0;
+  display: inline-block;
+}
 
-  .link svg {
-    font-size: 1rem;
-  }
+.navLink::before {
+  content: none;
+}
 
-  .link span {
-    font-size: 0.8rem;
-  }
+.navLink.active .iconWrapper {
+  background-color: #007bff;
+}
+
+.navItem:hover .iconWrapper {
+  background-color: #007bff;
 }
