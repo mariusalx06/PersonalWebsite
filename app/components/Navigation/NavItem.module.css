@@ -2,15 +2,13 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  border-radius: 8px;
   padding: 8px 8px;
-  color: black;
+  color: black !important;
   transition: background-color 0.3s ease;
   position: relative;
 }
 
 .navItem.active {
-  background-color: #7f6f61;
   color: white;
 }
 
@@ -90,43 +88,15 @@
 }
 
 .navItem.active .textWrapper {
-  bottom: unset;
-  top: 100%;
-  transform: translateX(-50%) translateY(20px);
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .navItem.active .textWrapper::after {
-  top: unset;
-  bottom: 100%;
-  transform: translateX(-50%) rotate(180deg);
+  transform: translateX(-50%);
 }
 
 .navItem.active .iconWrapper:hover + .textWrapper {
   opacity: 1;
-  transform: translateX(-50%) translateY(20px);
-}
-
-@media (max-width: 768px) {
-  .textWrapper {
-    opacity: 0;
-    transform: translateX(-50%) translateY(0);
-    transition: none;
-  }
-
-  .navItem.active .textWrapper {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .navItem:not(.active):hover .textWrapper {
-    opacity: 0;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .navItem.active .textWrapper {
-    transform: translateX(-50%) translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+  transform: translateX(-50%) translateY(0);
 }

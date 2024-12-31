@@ -1,5 +1,9 @@
 import styles from "./page.module.css";
 
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <section id="about">
+      <h1>About Me</h1>
+    </section>
+  );
 }

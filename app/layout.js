@@ -1,8 +1,8 @@
+// RootLayout Component
 import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
 import RightContainer from "./components/Container/RightContainer/RightContainer";
 import Navbar from "./components/Navigation/Navbar";
 import "./globals.css";
-
 import styles from "./layout.module.css";
 
 export const metadata = {
@@ -15,14 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className={styles.leftSideBg}></div>
-        <div className={styles.rightSideBg}></div>
-
+        <Navbar />
         <div className={styles.wrapper}>
-          <Navbar />
           <div className={styles.mainContainer}>
             <LeftContainer />
-            <RightContainer>{children}</RightContainer>
+            <RightContainer id="rightContainer">{children}</RightContainer>
           </div>
         </div>
       </body>

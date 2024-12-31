@@ -10,7 +10,7 @@ import SocialLink from "./SocialLink";
 
 export default function LeftContainer() {
   return (
-    <div className={styles.leftContainer}>
+    <div id="leftContainer" className={styles.leftContainer}>
       <div className={styles.topSide}>
         <Image
           src="/profile.jpg"
@@ -21,10 +21,10 @@ export default function LeftContainer() {
           priority
         />
         <h1 className={styles.name}>Marius Calin</h1>
-        <div className={styles.descriptionContainer}>
-          <p>&lt;Junior&gt;</p>
-          <p className={styles.description}>Full Stack Developer</p>
-        </div>
+      </div>
+      <div className={styles.descriptionContainer}>
+        <p>&lt;Junior&gt;</p>
+        <p className={styles.description}>Full Stack Developer</p>
       </div>
 
       <div className={styles.buttonContainer}>

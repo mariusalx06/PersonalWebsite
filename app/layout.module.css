@@ -19,22 +19,9 @@
   height: 100%;
 }
 
-.rightSideBg {
-  width: 57%;
-  background-color: white;
-  height: auto;
-}
-
 @media (max-width: 992px) {
   .wrapper {
     left: 45%;
-  }
-  .leftSideBg {
-    width: 37%;
-  }
-
-  .rightSideBg {
-    width: 63%;
   }
 }
 
@@ -54,17 +41,5 @@
     padding: 0;
     margin: 0;
     width: 100%;
-  }
-
-  .leftSideBg,
-  .rightSideBg {
-    width: 100%;
-  }
-
-  .leftSideBg {
-    height: 14vh;
-  }
-  .rightSideBg {
-    height: 0vh;
   }
 }
