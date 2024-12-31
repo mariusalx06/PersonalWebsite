@@ -1,0 +1,205 @@
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background-color: #f4ece6;
+  color: black;
+  width: 475px;
+  height: 500px;
+  box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.1),
+    -10px 10px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.topSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  margin-top: 1rem;
+}
+
+.profileImage {
+  border-radius: 50%;
+  margin: 16px 0px;
+  width: 150px;
+  height: 150px;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0rem;
+  position: relative;
+}
+
+.name::after {
+  content: "";
+  display: block;
+  height: 0.1875rem;
+  background-color: #007bff;
+  width: 50%;
+  margin: 1rem auto 0;
+}
+
+.descriptionContainer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #007bff;
+}
+
+.bottomSide {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 1rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.buttonIcon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.button:hover {
+  background-color: #005582;
+}
+@media (max-width: 1200px) {
+  .leftContainer {
+    width: 325px;
+  }
+}
+
+@media (max-width: 992px) {
+  .leftContainer {
+    width: 275px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f4ece6;
+    color: black;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin: 0;
+    box-shadow: none;
+    position: relative;
+  }
+
+  .topSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0rem;
+    width: 100%;
+  }
+
+  .profileImage {
+    width: 100px;
+    height: 100px;
+    margin: 8px 0;
+  }
+
+  .name {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+  .name::after {
+    content: "";
+    display: block;
+    height: 0.1875rem;
+    background-color: #007bff;
+    width: 50%;
+    margin: 0.5rem auto 0;
+  }
+
+  .descriptionContainer {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    width: 100px;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottomSide {
+    width: 50px;
+    height: auto;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.1);
+    gap: 2.5rem;
+  }
+
+  .buttonIcon {
+    font-size: 1.25rem;
+  }
+}

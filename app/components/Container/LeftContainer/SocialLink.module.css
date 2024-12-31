@@ -1,0 +1,17 @@
+.bottomButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bottomIcon {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.bottomButton:hover .bottomIcon {
+  color: #007bff;
+}

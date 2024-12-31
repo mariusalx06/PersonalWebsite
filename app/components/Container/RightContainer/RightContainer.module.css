@@ -1,0 +1,21 @@
+.rightContainer {
+  color: black;
+  width: 600px;
+  height: 500px;
+}
+@media (max-width: 1200px) {
+  .rightContainer {
+    width: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .rightContainer {
+    width: 450px;
+  }
+}
+@media (max-width: 768px) {
+  .rightContainer {
+    width: 100%;
+  }
+}

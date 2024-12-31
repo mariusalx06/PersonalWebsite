@@ -1,5 +1,5 @@
-import LeftContainer from "./components/Container/LeftContainer";
-import RightContainer from "./components/Container/RightContainer";
+import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
+import RightContainer from "./components/Container/RightContainer/RightContainer";
 import Navbar from "./components/Navigation/Navbar";
 import "./globals.css";
 

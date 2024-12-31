@@ -1,10 +1,12 @@
 .navItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   border-radius: 8px;
-  padding: 8px 0px;
+  padding: 8px 8px;
   color: black;
   transition: background-color 0.3s ease;
+  position: relative;
 }
 
 .navItem.active {
@@ -19,7 +21,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding-left: 10px;
 }
 
 .iconWrapper {
@@ -31,6 +32,7 @@
   padding: 8px;
   position: relative;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .icon {
@@ -41,20 +43,90 @@
   color: white;
 }
 
-.text {
-  margin-left: 10px;
-  margin-bottom: 0;
-  display: inline-block;
-}
-
-.navLink::before {
-  content: none;
-}
-
 .navLink.active .iconWrapper {
   background-color: #007bff;
 }
 
 .navItem:hover .iconWrapper {
   background-color: #007bff;
+}
+
+.textWrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 145%;
+  background-color: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-40px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.textWrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.textWrapperVisible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.iconWrapper:hover + .textWrapper,
+.navItem:not(.active):hover .textWrapper {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.navItem.active .textWrapper {
+  bottom: unset;
+  top: 100%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 1;
+}
+
+.navItem.active .textWrapper::after {
+  top: unset;
+  bottom: 100%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.navItem.active .iconWrapper:hover + .textWrapper {
+  opacity: 1;
+  transform: translateX(-50%) translateY(20px);
+}
+
+@media (max-width: 768px) {
+  .textWrapper {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+    transition: none;
+  }
+
+  .navItem.active .textWrapper {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navItem:not(.active):hover .textWrapper {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .navItem.active .textWrapper {
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 }

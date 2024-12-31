@@ -22,7 +22,14 @@ export default function NavItem({ href, icon: Icon, text, isExternal }) {
         >
           <Icon className={styles.icon} />
         </div>
-        <p className={styles.text}>{text}</p>
+
+        <div
+          className={`${styles.textWrapper} ${
+            isActive ? styles.textWrapperVisible : ""
+          }`}
+        >
+          {text}
+        </div>
       </Link>
     </li>
   );

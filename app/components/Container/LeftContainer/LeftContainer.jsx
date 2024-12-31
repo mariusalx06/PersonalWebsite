@@ -6,6 +6,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailIcon from "@mui/icons-material/Mail";
 import PhoneIcon from "@mui/icons-material/Phone";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+import SocialLink from "./SocialLink";
 
 export default function LeftContainer() {
   return (
@@ -17,6 +18,7 @@ export default function LeftContainer() {
           width={150}
           height={150}
           className={styles.profileImage}
+          priority
         />
         <h1 className={styles.name}>Marius Calin</h1>
         <div className={styles.descriptionContainer}>
@@ -30,22 +32,29 @@ export default function LeftContainer() {
           <CloudDownloadIcon className={styles.buttonIcon} />
           Resume
         </button>
-        <button className={styles.button}>Hire Me</button>
       </div>
 
       <div className={styles.bottomSide}>
-        <button className={styles.bottomButton}>
-          <LinkedInIcon className={styles.bottomIcon} />
-        </button>
-        <button className={styles.bottomButton}>
-          <WhatsAppIcon className={styles.bottomIcon} />
-        </button>
-        <button className={styles.bottomButton}>
-          <MailIcon className={styles.bottomIcon} />
-        </button>
-        <button className={styles.bottomButton}>
-          <PhoneIcon className={styles.bottomIcon} />
-        </button>
+        <SocialLink
+          Icon={LinkedInIcon}
+          onClick={() => handleClick("LinkedIn")}
+          ariaLabel="LinkedIn"
+        />
+        <SocialLink
+          Icon={WhatsAppIcon}
+          onClick={() => handleClick("WhatsApp")}
+          ariaLabel="WhatsApp"
+        />
+        <SocialLink
+          Icon={MailIcon}
+          onClick={() => handleClick("Mail")}
+          ariaLabel="Mail"
+        />
+        <SocialLink
+          Icon={PhoneIcon}
+          onClick={() => handleClick("Phone")}
+          ariaLabel="Phone"
+        />
       </div>
     </div>
   );
