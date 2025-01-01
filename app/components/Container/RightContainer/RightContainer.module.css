@@ -1,8 +1,8 @@
 .rightContainer {
   color: black;
   width: 600px;
-  height: 500px;
-  background-color: white;
+  height: auto;
+  background-color: #f4ece6;
 }
 
 @media (max-width: 1200px) {

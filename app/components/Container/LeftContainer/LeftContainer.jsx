@@ -28,10 +28,9 @@ export default function LeftContainer() {
       </div>
 
       <div className={styles.buttonContainer}>
-        {/* Resume Download Button styled as a SocialLink */}
         <SocialLink
           Icon={CloudDownloadIcon}
-          platform="Resume" // This platform triggers the download
+          platform="Resume"
           ariaLabel="Download Resume"
         >
           Resume

@@ -17,14 +17,8 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
-        {navItems.map(({ href, icon, text, isExternal }) => (
-          <NavItem
-            key={href}
-            href={href}
-            icon={icon}
-            text={text}
-            isExternal={isExternal}
-          />
+        {navItems.map(({ href, icon, text }) => (
+          <NavItem key={href} href={href} icon={icon} text={text} />
         ))}
       </ul>
     </nav>

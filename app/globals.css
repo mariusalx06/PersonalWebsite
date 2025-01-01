@@ -17,7 +17,7 @@ body {
   background: linear-gradient(
     90deg,
     rgb(0, 70, 140) 43%,
-    /* Darker blue */ rgba(255, 255, 255, 1) 43%
+    rgba(244, 236, 230, 1) 43%
   );
 }
 
@@ -50,7 +50,7 @@ button {
     background: linear-gradient(
       90deg,
       rgba(0, 70, 140) 35%,
-      rgba(255, 255, 255, 1) 35%
+      rgba(244, 236, 230, 1) 35%
     );
     height: auto;
   }

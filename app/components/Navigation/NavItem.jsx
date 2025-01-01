@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback } from "react";
 import styles from "./NavItem.module.css";
 
-export default function NavItem({ href, icon: Icon, text, isExternal }) {
+export default function NavItem({ href, icon: Icon, text }) {
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -19,6 +19,7 @@ export default function NavItem({ href, icon: Icon, text, isExternal }) {
       <Link
         href={href}
         className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+        scroll={false}
         onClick={() => handleScroll(href)}
       >
         <div
