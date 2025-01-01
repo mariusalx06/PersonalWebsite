@@ -1,0 +1,142 @@
+/* General container styling */
+.container {
+  font-family: "Arial", sans-serif;
+
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+/* Styling for the About Me section */
+.info {
+  background-color: #d1d9e6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #0070f3;
+}
+
+.skills {
+  margin-bottom: 3rem;
+  padding: 0rem 1rem;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skills ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skills a {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.skills a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the Hobbies section */
+
+.hobbies {
+  background-color: #d1d9e6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hobbies h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: 40%;
+  margin-bottom: 1rem;
+  background-color: #00468c;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 1rem 0.5rem;
+}
+
+.movieIcon {
+  color: #ff5c5c;
+  font-size: 2rem;
+}
+.movieTitle {
+  color: #ff5c5c;
+}
+
+.skiIcon {
+  color: #7db9e8;
+  font-size: 2rem;
+}
+.skiTitle {
+  color: #7db9e8;
+}
+
+.natureIcon {
+  color: #45b28b;
+  font-size: 2rem;
+}
+.natureTitle {
+  color: #45b28b;
+}
+
+.hobby p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.hobby small {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Styling for the Social section */
+.social {
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
+
+.social h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}

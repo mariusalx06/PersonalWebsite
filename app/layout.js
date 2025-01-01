@@ -1,6 +1,7 @@
 import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
 import RightContainer from "./components/Container/RightContainer/RightContainer";
 import Navbar from "./components/Navigation/Navbar";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import "./globals.css";
 import styles from "./layout.module.css";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
+
         <div className={styles.wrapper}>
           <div className={styles.mainContainer}>
             <LeftContainer />

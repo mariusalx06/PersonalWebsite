@@ -1,0 +1,22 @@
+.skillItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  margin-bottom: 0.5rem;
+  background-color: #d1d9e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skillContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.skillItem p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}

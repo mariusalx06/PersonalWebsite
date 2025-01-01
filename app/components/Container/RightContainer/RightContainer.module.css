@@ -1,7 +1,7 @@
 .rightContainer {
   color: black;
   width: 600px;
-  height: auto;
+  height: 600px;
   background-color: #f4ece6;
 }
 
@@ -19,7 +19,7 @@
 @media (max-width: 768px) {
   .rightContainer {
     width: 100%;
-    height: 100vh;
+    height: auto;
     overflow-y: auto;
     scroll-behavior: smooth;
   }

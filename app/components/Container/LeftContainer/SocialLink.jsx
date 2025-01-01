@@ -2,7 +2,6 @@
 import { useCallback } from "react";
 import styles from "./SocialLink.module.css";
 
-// Platform URLs for social links
 const platformUrls = {
   LinkedIn: "https://www.linkedin.com/in/marius-calin-473933204/",
   WhatsApp:

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  position: relative;
+}
+
+.icon {
+  border-radius: 1rem;
+  position: absolute;
+  cursor: pointer;
+  background-color: #d1d9e6;
+  padding: 0.3rem;
+}
+
+.buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 0;
+}
+
+.iconButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.icon svg {
+  font-size: 96px;
+}
+
+.github {
+  color: #333;
+}
+.linkedin {
+  color: #0077b5;
+}
+.instagram {
+  color: #e1306c;
+}
+.email {
+  color: #1da1f2;
+}
+.whatsapp {
+  color: #25d366;
+}
