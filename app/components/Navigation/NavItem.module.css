@@ -49,54 +49,25 @@
   background-color: #007bff;
 }
 
-.textWrapper {
-  position: absolute;
-  left: 50%;
-  bottom: 145%;
-  background-color: black;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0;
-  transform: translateX(-50%) translateY(-40px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  white-space: nowrap;
+.scrollToTopButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  font-size: 24px;
+  color: #00a046;
 }
 
-.textWrapper::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
+.scrollToTopButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #b0b0b0;
 }
 
-.textWrapperVisible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.iconWrapper:hover + .textWrapper,
-.navItem:not(.active):hover .textWrapper {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.navItem.active .textWrapper {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.navItem.active .textWrapper::after {
-  transform: translateX(-50%);
-}
-
-.navItem.active .iconWrapper:hover + .textWrapper {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+.scrollToTopButton:hover {
+  opacity: 0.7;
 }
