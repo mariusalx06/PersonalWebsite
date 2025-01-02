@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function SkillImage({ src, alt }) {
+  const randomDuration = Math.random() * (2.5 - 1) + 1;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -14,9 +16,9 @@ export default function SkillImage({ src, alt }) {
         whileInView={{
           opacity: 1,
           scale: 1,
-          transition: { duration: 0.5, ease: "easeOut" },
+          transition: { duration: randomDuration, ease: "easeOut" },
         }}
-        viewport={{ once: true }}
+        viewport={{}}
       >
         <Image src={src} alt={alt} width={50} height={50} />
       </motion.div>

@@ -15,6 +15,11 @@ const skills = [
     skill: "React",
   },
   {
+    src: "https://img.icons8.com/fluency/48/nextjs.png",
+    alt: "Next.js Logo",
+    skill: "Next.js",
+  },
+  {
     src: "https://img.icons8.com/color/48/redux.png",
     alt: "Redux Logo",
     skill: "Redux",

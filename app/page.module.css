@@ -58,6 +58,9 @@
 .skills a:hover {
   text-decoration: underline;
 }
+.skills p {
+  font-size: 0.8rem;
+}
 
 /* Styling for the Hobbies section */
 
