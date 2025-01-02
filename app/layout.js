@@ -1,7 +1,7 @@
 import Head from "next/head";
 import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
 import RightContainer from "./components/Container/RightContainer/RightContainer";
-import Navbar from "./components/Navigation/Navbar";
+import Navbar from "./components/General/Navigation/Navbar";
 import "./globals.css";
 import styles from "./layout.module.css";
 import Footer from "./components/General/Footer";
