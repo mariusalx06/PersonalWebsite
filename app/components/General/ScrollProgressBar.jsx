@@ -2,7 +2,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import styles from "./ScrollProgressBar.module.css";
 
-const ScrollProgressBar = () => {
+export default function ScrollProgressBar() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -15,10 +15,8 @@ const ScrollProgressBar = () => {
       className={styles.progressBar}
       style={{
         scaleX: scaleX,
-        width: "100%", // Ensure it fills 100% width on mobile
+        width: "100%",
       }}
     />
   );
-};
-
-export default ScrollProgressBar;
+}

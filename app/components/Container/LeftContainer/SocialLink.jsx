@@ -1,5 +1,6 @@
 "use client";
 import { useCallback } from "react";
+import { isMobile } from "react-device-detect";
 import styles from "./SocialLink.module.css";
 
 const platformUrls = {
@@ -13,8 +14,6 @@ const platformUrls = {
 export default function SocialLink({ Icon, platform, ariaLabel, children }) {
   const handleClick = useCallback(() => {
     if (platform === "Resume") {
-      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-
       if (isMobile) {
         window.open("/resume.pdf", "_blank");
       } else {

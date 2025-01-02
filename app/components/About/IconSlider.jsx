@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback, useEffect } from "react";
-import { motion } from "framer-motion"; // Import motion for animations
+import { motion } from "framer-motion";
 import {
   WhatsApp,
   Email as EmailIcon,
@@ -10,8 +10,9 @@ import {
 } from "@mui/icons-material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import SwipeIcon from "@mui/icons-material/Swipe"; // Import SwipeIcon
+import SwipeIcon from "@mui/icons-material/Swipe";
 import Link from "next/link";
+import { isMobile } from "react-device-detect";
 import styles from "./IconSlider.module.css";
 
 const icons = [
@@ -51,21 +52,10 @@ export default function IconSlider() {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
   const [dragging, setDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileState, setIsMobileState] = useState(null);
 
   useEffect(() => {
-    const checkIfMobile = () => {
-      const userAgent = navigator.userAgent.toLowerCase();
-      const isMobileDevice = /android|iphone|ipod|ipad|mobile/.test(userAgent);
-      setIsMobile(isMobileDevice);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
+    setIsMobileState(isMobile);
   }, []);
 
   const updatePositionIndexes = useCallback(
@@ -131,6 +121,8 @@ export default function IconSlider() {
     };
   }, [dragging]);
 
+  if (isMobileState === null) return null;
+
   return (
     <div className={styles.container}>
       {icons.map((item, index) => {
@@ -144,13 +136,14 @@ export default function IconSlider() {
             animate={positions[positionIndexes[index]]}
             variants={iconVariants}
             transition={{ duration: 0.5 }}
-            drag={isCenter && isMobile ? "x" : false}
+            drag={isCenter && isMobileState ? "x" : false}
             dragConstraints={{ left: -10, right: 10 }}
             onDragStart={handleDragStart}
             onDrag={handleDrag}
             onDragEnd={handleDragEnd}
             style={{
-              cursor: dragging && isCenter && isMobile ? "grabbing" : "grab",
+              cursor:
+                dragging && isCenter && isMobileState ? "grabbing" : "grab",
             }}
           >
             <Link
@@ -169,7 +162,7 @@ export default function IconSlider() {
         );
       })}
 
-      {isMobile && (
+      {isMobileState && (
         <motion.div
           className={styles.swipeIconWrapper}
           animate={{
@@ -186,12 +179,20 @@ export default function IconSlider() {
         </motion.div>
       )}
 
-      {!isMobile && (
+      {!isMobileState && (
         <div className={styles.buttons}>
-          <button className={styles.iconButton} onClick={handleBack}>
+          <button
+            className={styles.iconButton}
+            onClick={handleBack}
+            aria-label="Go to previous icon"
+          >
             <ArrowBackIosIcon style={{ fontSize: 32 }} />
           </button>
-          <button className={styles.iconButton} onClick={handleNext}>
+          <button
+            className={styles.iconButton}
+            onClick={handleNext}
+            aria-label="Go to next icon"
+          >
             <ArrowForwardIosIcon style={{ fontSize: 32 }} />
           </button>
         </div>
