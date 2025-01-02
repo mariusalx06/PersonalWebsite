@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
-
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import SwipeIcon from "@mui/icons-material/Swipe";
@@ -21,9 +20,10 @@ const iconVariants = {
 
 export default function IconSlider({ icons }) {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
-  const [dragging, setDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
   const [isMobileState, setIsMobileState] = useState(null);
+  const [dragging, setDragging] = useState(false);
+  const [offsetX, setOffsetX] = useState(0);
+  const [thresholdCrossed, setThresholdCrossed] = useState(false);
 
   useEffect(() => {
     setIsMobileState(isMobile);
@@ -48,32 +48,38 @@ export default function IconSlider({ icons }) {
   const handleDragStart = useCallback(() => {
     setDragging(true);
     document.body.style.overflow = "hidden";
+    setThresholdCrossed(false);
   }, []);
 
-  const handleDrag = useCallback((event, info) => {
-    setDragOffset(info.offset.x);
-  }, []);
+  const handleDrag = useCallback(
+    (event, info) => {
+      const threshold = 50; // Set threshold to 50px
+
+      setOffsetX(info.offset.x); // Update the container's drag position
+
+      if (Math.abs(info.offset.x) > threshold && !thresholdCrossed) {
+        setThresholdCrossed(true);
+        const direction = info.offset.x > 0 ? "backward" : "forward";
+        updatePositionIndexes(direction);
+        document.body.style.overflow = "auto";
+      }
+    },
+    [updatePositionIndexes, thresholdCrossed]
+  );
 
   const handleDragEnd = useCallback(() => {
-    const threshold = 10;
-
-    if (Math.abs(dragOffset) > threshold) {
-      const direction = dragOffset > 0 ? "backward" : "forward";
-      updatePositionIndexes(direction);
-    }
-
     setDragging(false);
-    setDragOffset(0);
+    setOffsetX(0);
     document.body.style.overflow = "auto";
-  }, [dragOffset]);
+  }, []);
 
   const handleNext = useCallback(() => {
     updatePositionIndexes("forward");
-  }, []);
+  }, [updatePositionIndexes]);
 
   const handleBack = useCallback(() => {
     updatePositionIndexes("backward");
-  }, []);
+  }, [updatePositionIndexes]);
 
   useEffect(() => {
     const preventScroll = (e) => {
@@ -95,7 +101,15 @@ export default function IconSlider({ icons }) {
   if (isMobileState === null) return null;
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      style={{ x: `${offsetX}px`, transition: "none" }}
+      drag="x"
+      dragConstraints={{ left: -10, right: 10 }}
+      onDragStart={handleDragStart}
+      onDrag={handleDrag}
+      onDragEnd={handleDragEnd}
+    >
       {icons.map((item, index) => {
         const isCenter = positions[positionIndexes[index]] === "center";
 
@@ -107,14 +121,8 @@ export default function IconSlider({ icons }) {
             animate={positions[positionIndexes[index]]}
             variants={iconVariants}
             transition={{ duration: 0.5 }}
-            drag={isCenter && isMobileState ? "x" : false}
-            dragConstraints={{ left: -10, right: 10 }}
-            onDragStart={handleDragStart}
-            onDrag={handleDrag}
-            onDragEnd={handleDragEnd}
             style={{
-              cursor:
-                dragging && isCenter && isMobileState ? "grabbing" : "grab",
+              cursor: isCenter && isMobileState ? "grab" : "default",
             }}
           >
             <Link
@@ -122,7 +130,7 @@ export default function IconSlider({ icons }) {
               target="_blank"
               rel="noopener noreferrer"
               className={
-                dragging || positions[positionIndexes[index]] !== "center"
+                positions[positionIndexes[index]] !== "center"
                   ? styles.disabledLink
                   : ""
               }
@@ -137,7 +145,7 @@ export default function IconSlider({ icons }) {
         <motion.div
           className={styles.swipeIconWrapper}
           animate={{
-            x: ["0%", "10%", "0%", "-10%", "0%"],
+            x: ["-0%", "25%", "0%", "-25%", "0%"],
           }}
           transition={{
             duration: 2,
@@ -168,6 +176,6 @@ export default function IconSlider({ icons }) {
           </button>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
