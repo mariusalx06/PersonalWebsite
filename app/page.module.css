@@ -138,3 +138,19 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+
+.github {
+  color: #333;
+}
+.linkedin {
+  color: #0077b5;
+}
+.instagram {
+  color: #e1306c;
+}
+.email {
+  color: #1da1f2;
+}
+.whatsapp {
+  color: #25d366;
+}
