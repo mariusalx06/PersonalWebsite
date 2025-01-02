@@ -1,7 +1,6 @@
 /* General container styling */
 .container {
   font-family: "Arial", sans-serif;
-
   margin: 0 auto;
   max-width: 1000px;
   padding: 1rem;
@@ -45,10 +44,10 @@
 
 .skills ul {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  overflow: hidden;
 }
 
 .skills a {
@@ -153,4 +152,14 @@
 }
 .whatsapp {
   color: #25d366;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+  .info,
+  .hobbies {
+    border-radius: 0;
+  }
 }

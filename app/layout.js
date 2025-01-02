@@ -4,6 +4,7 @@ import RightContainer from "./components/Container/RightContainer/RightContainer
 import Navbar from "./components/Navigation/Navbar";
 import "./globals.css";
 import styles from "./layout.module.css";
+import Footer from "./components/General/Footer";
 
 // You can remove this redundant seoHeadMetadata and directly use metadata
 export const metadata = {
@@ -76,7 +77,10 @@ export default function RootLayout({ children }) {
         <div className={styles.wrapper}>
           <div className={styles.mainContainer}>
             <LeftContainer />
-            <RightContainer id="rightContainer">{children}</RightContainer>
+            <RightContainer id="rightContainer">
+              {children}
+              <Footer />
+            </RightContainer>
           </div>
         </div>
       </body>

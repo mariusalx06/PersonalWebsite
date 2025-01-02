@@ -1,0 +1,10 @@
+.footer {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 6rem;
+  }
+}
