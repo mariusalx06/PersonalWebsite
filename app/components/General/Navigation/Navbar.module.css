@@ -30,6 +30,10 @@
 
 @media (max-width: 768px) {
   .navbar {
+    background-color: rgba(0, 70, 140, 0.7);
+  }
+
+  .navbar {
     width: 90%;
     padding: 0;
   }

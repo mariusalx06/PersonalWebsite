@@ -10,7 +10,6 @@ import ScrollProgressBar from "./components/General/ScrollProgressBar";
 
 import skills from "../data/skillsData.js";
 import icons from "../data//socialIconsData.js";
-import Footer from "./components/General/Footer";
 
 export default function Home() {
   return (

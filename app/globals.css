@@ -55,3 +55,54 @@ button {
     height: auto;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00468c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #003a6f;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+scrollbar-thumb {
+  background-color: #00468c;
+  border-radius: 10px;
+}
+
+scrollbar-thumb:hover {
+  background-color: #003a6f;
+}
+
+scrollbar-track {
+  background: transparent;
+}
+
+/* Optional: Hide scrollbar on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

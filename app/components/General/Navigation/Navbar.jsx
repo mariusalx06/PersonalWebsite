@@ -1,7 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { isMobile } from "react-device-detect";
 import NavItem from "./NavItem";
 import styles from "./Navbar.module.css";
 
@@ -20,33 +18,15 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    if (isMobile) {
-      const handleScroll = () => {
-        if (window.scrollY > 0 && !scrolled) {
-          setScrolled(true);
-        }
-      };
-
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [scrolled]);
-
   return (
     <motion.nav
       className={styles.navbar}
       initial={{ opacity: 0, y: 100, x: "-50%" }}
       animate={{
-        opacity: scrolled || !isMobile ? 1 : 0,
-        y: scrolled || !isMobile ? 0 : 100,
-        x: "-50%",
+        opacity: 1,
+        y: 0,
       }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
     >
       <ul className={styles.navList}>
         {navItems.map(({ href, icon }) => (
