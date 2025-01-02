@@ -1,6 +1,6 @@
 "use client";
-import { useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { useState, useCallback, useEffect } from "react";
+import { motion } from "framer-motion"; // Import motion for animations
 import {
   WhatsApp,
   Email as EmailIcon,
@@ -10,6 +10,7 @@ import {
 } from "@mui/icons-material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import SwipeIcon from "@mui/icons-material/Swipe"; // Import SwipeIcon
 import Link from "next/link";
 import styles from "./IconSlider.module.css";
 
@@ -48,55 +49,153 @@ const iconVariants = {
 
 export default function IconSlider() {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
+  const [dragging, setDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isMobileDevice = /android|iphone|ipod|ipad|mobile/.test(userAgent);
+      setIsMobile(isMobileDevice);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  const updatePositionIndexes = useCallback(
+    (direction) => {
+      setPositionIndexes((prevIndexes) =>
+        prevIndexes.map((prevIndex) => {
+          if (direction === "forward") {
+            return (prevIndex + 1) % icons.length;
+          } else if (direction === "backward") {
+            return (prevIndex + icons.length - 1) % icons.length;
+          }
+          return prevIndex;
+        })
+      );
+    },
+    [icons.length]
+  );
+
+  const handleDragStart = useCallback(() => {
+    setDragging(true);
+    document.body.style.overflow = "hidden";
+  }, []);
+
+  const handleDrag = useCallback((event, info) => {
+    setDragOffset(info.offset.x);
+  }, []);
+
+  const handleDragEnd = useCallback(() => {
+    const threshold = 10;
+
+    if (Math.abs(dragOffset) > threshold) {
+      const direction = dragOffset > 0 ? "backward" : "forward";
+      updatePositionIndexes(direction);
+    }
+
+    setDragging(false);
+    setDragOffset(0);
+    document.body.style.overflow = "auto";
+  }, [dragOffset]);
 
   const handleNext = useCallback(() => {
-    setPositionIndexes((prevIndexes) =>
-      prevIndexes.map((prevIndex) => (prevIndex + 1) % icons.length)
-    );
+    updatePositionIndexes("forward");
   }, []);
 
   const handleBack = useCallback(() => {
-    setPositionIndexes((prevIndexes) =>
-      prevIndexes.map(
-        (prevIndex) => (prevIndex + icons.length - 1) % icons.length
-      )
-    );
+    updatePositionIndexes("backward");
   }, []);
+
+  useEffect(() => {
+    const preventScroll = (e) => {
+      if (dragging) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    document.body.addEventListener("touchmove", preventScroll, {
+      passive: false,
+    });
+
+    return () => {
+      document.body.removeEventListener("touchmove", preventScroll);
+    };
+  }, [dragging]);
 
   return (
     <div className={styles.container}>
-      {icons.map((item, index) => (
-        <motion.div
-          key={index}
-          className={styles.icon}
-          initial="center"
-          animate={positions[positionIndexes[index]]}
-          variants={iconVariants}
-          transition={{ duration: 0.5 }}
-        >
-          <Link
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            // Only allow clicking on the center icon
-            className={
-              positions[positionIndexes[index]] === "center"
-                ? ""
-                : styles.disabledLink
-            }
+      {icons.map((item, index) => {
+        const isCenter = positions[positionIndexes[index]] === "center";
+
+        return (
+          <motion.div
+            key={index}
+            className={styles.icon}
+            initial="center"
+            animate={positions[positionIndexes[index]]}
+            variants={iconVariants}
+            transition={{ duration: 0.5 }}
+            drag={isCenter && isMobile ? "x" : false}
+            dragConstraints={{ left: -10, right: 10 }}
+            onDragStart={handleDragStart}
+            onDrag={handleDrag}
+            onDragEnd={handleDragEnd}
+            style={{
+              cursor: dragging && isCenter && isMobile ? "grabbing" : "grab",
+            }}
           >
-            {item.icon}
-          </Link>
+            <Link
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={
+                dragging || positions[positionIndexes[index]] !== "center"
+                  ? styles.disabledLink
+                  : ""
+              }
+            >
+              {item.icon}
+            </Link>
+          </motion.div>
+        );
+      })}
+
+      {isMobile && (
+        <motion.div
+          className={styles.swipeIconWrapper}
+          animate={{
+            x: ["0%", "10%", "0%", "-10%", "0%"],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "easeInOut",
+          }}
+        >
+          <SwipeIcon className={styles.swipeIcon} />
         </motion.div>
-      ))}
-      <div className={styles.buttons}>
-        <button className={styles.iconButton} onClick={handleBack}>
-          <ArrowBackIosIcon style={{ fontSize: 32 }} />
-        </button>
-        <button className={styles.iconButton} onClick={handleNext}>
-          <ArrowForwardIosIcon style={{ fontSize: 32 }} />
-        </button>
-      </div>
+      )}
+
+      {!isMobile && (
+        <div className={styles.buttons}>
+          <button className={styles.iconButton} onClick={handleBack}>
+            <ArrowBackIosIcon style={{ fontSize: 32 }} />
+          </button>
+          <button className={styles.iconButton} onClick={handleNext}>
+            <ArrowForwardIosIcon style={{ fontSize: 32 }} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

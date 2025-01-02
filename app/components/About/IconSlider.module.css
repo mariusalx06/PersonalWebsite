@@ -59,3 +59,19 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.swipeIconWrapper {
+  position: absolute;
+  left: 0;
+  height: 2rem;
+  transform: translateY(-50%);
+}
+
+.swipeIcon {
+  position: relative;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: gray;
+}
