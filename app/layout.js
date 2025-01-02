@@ -1,4 +1,3 @@
-import Head from "next/head";
 import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
 import RightContainer from "./components/Container/RightContainer/RightContainer";
 import Navbar from "./components/General/Navigation/Navbar";
@@ -60,16 +59,16 @@ const structuredDataHome = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredDataHome),
+          }}
+        ></script>
+      </head>
       <body>
         <Navbar />
-        <Head>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(structuredDataHome),
-            }}
-          ></script>
-        </Head>
 
         <div className={styles.wrapper}>
           <div className={styles.mainContainer}>

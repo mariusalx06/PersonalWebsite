@@ -21,6 +21,7 @@ export default function LeftContainer() {
           priority
         />
         <h2 className={styles.name}>Marius Calin</h2>
+        <p>Welcome to my Portfolio website!</p>
       </div>
       <div className={styles.descriptionContainer}>
         <p>&lt;Junior&gt;</p>
