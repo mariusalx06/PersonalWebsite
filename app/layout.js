@@ -6,7 +6,6 @@ import "./globals.css";
 import styles from "./layout.module.css";
 import Footer from "./components/General/Footer";
 
-// You can remove this redundant seoHeadMetadata and directly use metadata
 export const metadata = {
   title: "Marius Calin Portfolio",
   description:
@@ -71,8 +70,6 @@ export default function RootLayout({ children }) {
             }}
           ></script>
         </Head>
-
-        {/* Pass metadata directly */}
 
         <div className={styles.wrapper}>
           <div className={styles.mainContainer}>

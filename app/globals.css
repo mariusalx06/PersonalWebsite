@@ -99,10 +99,3 @@ scrollbar-thumb:hover {
 scrollbar-track {
   background: transparent;
 }
-
-/* Optional: Hide scrollbar on mobile */
-@media (max-width: 768px) {
-  ::-webkit-scrollbar {
-    display: none;
-  }
-}

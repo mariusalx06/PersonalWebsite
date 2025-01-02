@@ -20,7 +20,6 @@
   right: 0;
   display: flex;
   justify-content: space-between;
-
   width: 100%;
   transform: translateY(-50%);
   padding: 0;
@@ -50,6 +49,7 @@
   left: 0;
   height: 2rem;
   transform: translateY(-50%);
+  overflow: hidden;
 }
 
 .swipeIcon {
