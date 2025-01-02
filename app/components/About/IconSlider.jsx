@@ -22,7 +22,6 @@ const icons = [
     icon: <LinkedIn className={styles.linkedin} />,
     link: "https://www.linkedin.com/in/marius-calin-473933204/",
   },
-
   {
     icon: <Instagram className={styles.instagram} />,
     link: "https://www.instagram.com/marius.alex06/",
@@ -75,7 +74,17 @@ export default function IconSlider() {
           variants={iconVariants}
           transition={{ duration: 0.5 }}
         >
-          <Link href={item.link} target="_blank" rel="noopener noreferrer">
+          <Link
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            // Only allow clicking on the center icon
+            className={
+              positions[positionIndexes[index]] === "center"
+                ? ""
+                : styles.disabledLink
+            }
+          >
             {item.icon}
           </Link>
         </motion.div>

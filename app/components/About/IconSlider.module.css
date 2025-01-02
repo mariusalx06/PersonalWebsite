@@ -9,7 +9,6 @@
 .icon {
   border-radius: 1rem;
   position: absolute;
-  cursor: pointer;
   background-color: #d1d9e6;
   padding: 0.3rem;
 }
@@ -54,4 +53,9 @@
 }
 .whatsapp {
   color: #25d366;
+}
+.disabledLink {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }

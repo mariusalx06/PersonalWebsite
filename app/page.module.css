@@ -74,11 +74,15 @@
   flex-wrap: wrap;
 }
 
+.hobbiesHeader {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .hobbies h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  width: 100%;
-  text-align: center;
 }
 
 .hobby {
@@ -95,18 +99,11 @@
   padding: 1rem 0.5rem;
 }
 
-.movieIcon {
-  color: #ff5c5c;
-  font-size: 2rem;
-}
-.movieTitle {
-  color: #ff5c5c;
-}
-
 .skiIcon {
   color: #7db9e8;
   font-size: 2rem;
 }
+
 .skiTitle {
   color: #7db9e8;
 }
@@ -115,6 +112,7 @@
   color: #45b28b;
   font-size: 2rem;
 }
+
 .natureTitle {
   color: #45b28b;
 }
