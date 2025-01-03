@@ -13,11 +13,11 @@ export const metadata = {
     title: "Marius Calin Portfolio",
     description:
       "Discover Marius's portfolio showcasing his full-stack web development skills, including both front-end and back-end expertise.",
-    url: "https://www.yourwebsite.com", // To be replaced when finished
+    url: "https://personal-website-nu-navy-83.vercel.app", // To be replaced when finished
     siteName: "Marius Calin Portfolio",
     images: [
       {
-        url: "https://www.yourwebsite.com/og-image.jpg", // To be replaced when finished
+        url: "https://personal-website-nu-navy-83.vercel.app/mclogo.png", // To be replaced when finished
         width: 1200,
         height: 630,
         alt: "Marius Calin Portfolio Thumbnail",
@@ -29,7 +29,7 @@ export const metadata = {
     title: "Marius Calin Portfolio",
     description:
       "Explore Marius's portfolio showcasing his full-stack web development expertise.",
-    image: "https://www.yourwebsite.com/twitter-image.jpg", // To be replaced when finished
+    image: "https://personal-website-nu-navy-83.vercel.app/mclogo.png", // To be replaced when finished
   },
 };
 
@@ -40,7 +40,7 @@ const structuredDataHome = {
   name: "Marius Calin",
   jobTitle: "Full-Stack Web Developer",
   url: metadata.openGraph.url, // Use the url from metadata
-  image: "https://www.yourwebsite.com/profile image", // To be replaced when finished
+  image: "https://personal-website-nu-navy-83.vercel.app/mclogo.png", // To be replaced when finished
   description:
     metadata.description ||
     "Marius Calin is a full-stack web developer specializing in front-end and back-end technologies.",
