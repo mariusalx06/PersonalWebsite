@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
 import RightContainer from "./components/Container/RightContainer/RightContainer";
 import Navbar from "./components/General/Navigation/Navbar";
@@ -79,6 +80,7 @@ export default function RootLayout({ children }) {
             </RightContainer>
           </div>
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
