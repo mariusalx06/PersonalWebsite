@@ -59,3 +59,22 @@
   font-size: 2rem;
   color: gray;
 }
+.github {
+  color: #333;
+}
+
+.linkedin {
+  color: #0e76a8;
+}
+
+.instagram {
+  color: #e4405f;
+}
+
+.whatsapp {
+  color: #25d366;
+}
+
+.mail {
+  color: #008080;
+}

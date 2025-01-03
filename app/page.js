@@ -9,7 +9,8 @@ import IconSlider from "./components/About/IconSlider";
 import ScrollProgressBar from "./components/General/ScrollProgressBar";
 
 import skills from "../data/skillsData.js";
-import icons from "../data//socialIconsData.js";
+import socialIconsData from "@/data/socialIconsData";
+import Overlay from "./components/General/AnimatedOverlay";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
               </span>
               .
             </p>
+            <Overlay />
           </div>
         </section>
 
@@ -82,6 +84,7 @@ export default function Home() {
                 thrill and adventure.
               </small>
             </div>
+            <Overlay />
           </div>
 
           <div className={styles.hobby}>
@@ -93,6 +96,7 @@ export default function Home() {
                 nature&apos;s calm beauty.
               </small>
             </div>
+            <Overlay />
           </div>
         </section>
 
@@ -101,7 +105,7 @@ export default function Home() {
           <header>
             <h2>Social</h2>
           </header>
-          <IconSlider icons={icons} />
+          <IconSlider icons={socialIconsData} />
         </section>
       </div>
     </>

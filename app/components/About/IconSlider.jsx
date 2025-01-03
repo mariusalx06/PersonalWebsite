@@ -135,7 +135,7 @@ export default function IconSlider({ icons }) {
                   : ""
               }
             >
-              {item.icon}
+              <item.Icon className={styles[item.platform.toLowerCase()]} />{" "}
             </Link>
           </motion.div>
         );

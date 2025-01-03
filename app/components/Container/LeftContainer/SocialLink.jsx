@@ -1,52 +1,32 @@
 "use client";
 import { useCallback } from "react";
-import { isMobile } from "react-device-detect";
+import { motion } from "framer-motion";
 import styles from "./SocialLink.module.css";
 
-const platformUrls = {
-  LinkedIn: "https://www.linkedin.com/in/marius-calin-473933204/",
-  WhatsApp:
-    "https://wa.me/40727727722?text=Hello%20Marius,%20I%20liked%20your%20website%20and%20I%20would%20like%20to%20get%20in%20touch!",
-  Mail: "mailto:marius.calin0699@gmail.com",
-  Phone: "tel:+40727727722",
-};
-
-export default function SocialLink({ Icon, platform, ariaLabel, children }) {
+export default function SocialLink({ Icon, platform, link, ariaLabel }) {
   const handleClick = useCallback(() => {
-    if (platform === "Resume") {
-      if (isMobile) {
-        window.open("/resume.pdf", "_blank");
-      } else {
-        const link = document.createElement("a");
-        link.href = "/resume.pdf";
-        link.download = "Marius_Calin_Resume.pdf";
-        link.click();
-      }
-    } else {
-      const url = platformUrls[platform];
-
-      if (url) {
-        platform === "Mail" || platform === "Phone"
-          ? (window.location.href = url)
-          : window.open(url, "_blank");
-      }
+    if (link) {
+      platform === "Mail" || platform === "Phone"
+        ? (window.location.href = link)
+        : window.open(link, "_blank");
     }
-  }, [platform]);
-
-  const buttonStyle =
-    platform === "Resume" ? styles.resumeButton : styles.bottomButton;
-
-  const iconStyle =
-    platform === "Resume" ? styles.whiteIcon : styles.bottomIcon;
+  }, [platform, link]);
 
   return (
-    <button
-      className={buttonStyle}
+    <motion.button
+      className={styles.bottomButton}
       onClick={handleClick}
       aria-label={ariaLabel}
+      initial={{ rotate: 0 }}
+      animate={{ rotate: 360 }}
+      whileHover={{ rotate: 720 }}
+      transition={{ duration: 0.5 }}
     >
-      <Icon className={iconStyle} />
-      {platform === "Resume" && children}{" "}
-    </button>
+      <Icon
+        className={`${styles.bottomIcon} ${
+          styles[`${platform.toLowerCase()}`]
+        }`}
+      />
+    </motion.button>
   );
 }

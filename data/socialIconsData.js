@@ -5,29 +5,38 @@ import {
   WhatsApp,
   Email,
 } from "@mui/icons-material";
-import styles from "../app/page.module.css";
 
-const icons = [
+const socialIconsData = [
   {
-    icon: <GitHub className={styles.github} />,
+    Icon: GitHub,
+    platform: "GitHub",
     link: "https://github.com/mariusalx06",
+    ariaLabel: "GitHub Profile",
   },
   {
-    icon: <LinkedIn className={styles.linkedin} />,
+    Icon: LinkedIn,
+    platform: "LinkedIn",
     link: "https://www.linkedin.com/in/marius-calin-473933204/",
+    ariaLabel: "LinkedIn Profile",
   },
   {
-    icon: <Instagram className={styles.instagram} />,
+    Icon: Instagram,
+    platform: "Instagram",
     link: "https://www.instagram.com/marius.alex06/",
+    ariaLabel: "Instagram Profile",
   },
   {
-    icon: <Email className={styles.email} />,
+    Icon: Email,
+    platform: "Mail",
     link: "mailto:marius.calin0699@gmail.com",
+    ariaLabel: "Email",
   },
   {
-    icon: <WhatsApp className={styles.whatsapp} />,
+    Icon: WhatsApp,
+    platform: "WhatsApp",
     link: "https://wa.me/40727727722?text=Hello%20Marius,%20I%20liked%20your%20website%20and%20I%20would%20like%20to%20get%20in%20touch!",
+    ariaLabel: "WhatsApp",
   },
 ];
 
-export default icons;
+export default socialIconsData;

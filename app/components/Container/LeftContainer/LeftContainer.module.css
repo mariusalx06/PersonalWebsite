@@ -29,26 +29,15 @@
 }
 
 .name {
-  font-size: 2rem;
-  font-weight: 700;
   margin: 1rem 0rem;
   position: relative;
 }
 
-.name::after {
-  content: "";
-  display: block;
-  height: 0.1875rem;
-  background-color: #007bff;
-  width: 50%;
-  margin: 1rem auto 0;
-}
-
 .descriptionContainer {
-  margin-top: 4rem;
   font-size: 0.9rem;
   overflow: visible;
   height: auto;
+  margin-bottom: 1rem;
 }
 
 .description {
@@ -123,11 +112,15 @@
 
   .bottomSide {
     order: -1;
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3);
   }
   .buttonContainer {
     margin-bottom: 1rem;
   }
   .profileImage {
     margin-top: 3rem;
+  }
+  .descriptionContainer {
+    margin-bottom: 2rem;
   }
 }

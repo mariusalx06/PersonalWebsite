@@ -1,12 +1,7 @@
 import Image from "next/image";
 import styles from "./LeftContainer.module.css";
-
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import MailIcon from "@mui/icons-material/Mail";
-import PhoneIcon from "@mui/icons-material/Phone";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import SocialLink from "./SocialLink";
+import socialIconsData from "@/data/socialIconsData";
 
 export default function LeftContainer() {
   return (
@@ -20,7 +15,7 @@ export default function LeftContainer() {
           className={styles.profileImage}
           priority
         />
-        <h2 className={styles.name}>Marius Calin</h2>
+        <h1 className={styles.name}>Marius Calin</h1>
         <p>Welcome to my Portfolio website!</p>
       </div>
       <div className={styles.descriptionContainer}>
@@ -28,37 +23,16 @@ export default function LeftContainer() {
         <p className={styles.description}>Full Stack Developer</p>
       </div>
 
-      <div className={styles.buttonContainer}>
-        <SocialLink
-          Icon={CloudDownloadIcon}
-          platform="Resume"
-          ariaLabel="Download Resume"
-        >
-          Resume
-        </SocialLink>
-      </div>
-
       <div className={styles.bottomSide}>
-        <SocialLink
-          Icon={LinkedInIcon}
-          platform="LinkedIn"
-          ariaLabel="LinkedIn"
-        >
-          LinkedIn
-        </SocialLink>
-        <SocialLink
-          Icon={WhatsAppIcon}
-          platform="WhatsApp"
-          ariaLabel="WhatsApp"
-        >
-          WhatsApp
-        </SocialLink>
-        <SocialLink Icon={MailIcon} platform="Mail" ariaLabel="Mail">
-          Email
-        </SocialLink>
-        <SocialLink Icon={PhoneIcon} platform="Phone" ariaLabel="Phone">
-          Phone
-        </SocialLink>
+        {socialIconsData.map(({ Icon, platform, link, ariaLabel }) => (
+          <SocialLink
+            key={platform}
+            Icon={Icon}
+            platform={platform}
+            link={link}
+            ariaLabel={ariaLabel}
+          ></SocialLink>
+        ))}
       </div>
     </div>
   );
