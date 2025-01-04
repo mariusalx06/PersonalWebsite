@@ -7,7 +7,7 @@ import RadialOverlay from "./RadialOverlay";
 export default function LeftContainer() {
   return (
     <div id="leftContainer" className={styles.leftContainer}>
-      <div className={styles.topSide}>
+      <header className={styles.topSide}>
         <RadialOverlay />
         <Image
           src="/profile.jpg"
@@ -19,10 +19,10 @@ export default function LeftContainer() {
         />
         <h1 className={styles.name}>Marius Calin</h1>
         <p>Welcome to my Portfolio website!</p>
-      </div>
+      </header>
       <div className={styles.descriptionContainer}>
         <p>&lt;Junior&gt;</p>
-        <p className={styles.description}>Full Stack Developer</p>
+        <p className={styles.description}>Full Stack Web Developer</p>
       </div>
 
       <div className={styles.bottomSide}>

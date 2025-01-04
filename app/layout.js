@@ -8,27 +8,27 @@ import Footer from "./components/General/Footer";
 import ScrollProgressBar from "./components/General/ScrollProgressBar";
 
 export const metadata = {
-  title: "Marius Calin Portfolio",
+  title: "Marius Calin | Full Stack Web Developer",
   description:
     "This is Marius's personal website where he's showcasing his full stack web developer skills (front-end as well as backend)",
   openGraph: {
-    title: "Marius Calin Portfolio",
+    title: "Marius Calin | Full Stack Web Developer",
     description:
       "Discover Marius's portfolio showcasing his full stack web development skills, including both front-end and back-end expertise.",
     url: "https://personal-website-nu-navy-83.vercel.app", // to be modified with the correct URL
-    siteName: "Marius Calin Portfolio",
+    siteName: "Marius Calin Portfolio | Web Developer",
     images: [
       {
         url: "https://personal-website-nu-navy-83.vercel.app/mcLogoOpenGraph.png", // To be replaced when finished
         width: 1200,
         height: 630,
-        alt: "Marius Calin Portfolio Thumbnail",
+        alt: "Marius Calin | Full Stack Web Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marius Calin Portfolio",
+    title: "Marius Calin | Full Stack Web Developer",
     description:
       "Explore Marius's portfolio showcasing his full stack web development expertise.",
     image:

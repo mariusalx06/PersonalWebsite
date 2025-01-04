@@ -32,10 +32,12 @@ export default function Hobby({
     >
       <Icon className={styles.icon} style={{ color: iconColor }} />
       <div>
-        <p className={styles.title} style={{ color: titleColor }}>
-          {title}
-        </p>
-        <small>{description}</small>
+        <header>
+          <h3 className={styles.title} style={{ color: titleColor }}>
+            {title}
+          </h3>
+        </header>
+        <small className={styles.small}>{description}</small>
       </div>
     </motion.div>
   );
