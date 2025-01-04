@@ -10,6 +10,8 @@
   height: 600px;
   box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
     -5px 5px 15px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
 }
 
 .topSide {
@@ -18,14 +20,14 @@
   align-items: center;
   justify-content: flex-start;
   flex-grow: 1;
-  margin-top: 1rem;
 }
 
 .profileImage {
   border-radius: 50%;
-  margin: 1rem 0px;
+  margin-top: 2rem;
   width: 150px;
   height: 150px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .name {

@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import styles from "./AnimatedOverlay.module.css";
 
-const Overlay = () => {
+export default function Overlay() {
   return (
     <motion.div
       className={styles.overlay}
@@ -19,6 +19,4 @@ const Overlay = () => {
       viewport={{}}
     />
   );
-};
-
-export default Overlay;
+}

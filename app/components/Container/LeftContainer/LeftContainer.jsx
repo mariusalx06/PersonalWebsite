@@ -2,11 +2,13 @@ import Image from "next/image";
 import styles from "./LeftContainer.module.css";
 import SocialLink from "./SocialLink";
 import socialIconsData from "@/data/socialIconsData";
+import RadialOverlay from "./RadialOverlay";
 
 export default function LeftContainer() {
   return (
     <div id="leftContainer" className={styles.leftContainer}>
       <div className={styles.topSide}>
+        <RadialOverlay />
         <Image
           src="/profile.jpg"
           alt="Marius Calin"
