@@ -11,7 +11,6 @@ export default function HobbiesSection() {
         <h2>Favorite Hobbies</h2>
       </header>
 
-      {/* Passing direction as a prop */}
       <Hobby
         direction="leftToRight"
         Icon={DownhillSkiingIcon}

@@ -10,7 +10,6 @@ export default function Hobby({
   iconColor,
   titleColor,
 }) {
-  // Animation variants for sliding
   const slideVariants = {
     leftToRight: {
       hidden: { x: -100, opacity: 0 },
@@ -29,7 +28,7 @@ export default function Hobby({
       whileInView="visible"
       variants={slideVariants[direction]}
       viewport={{}}
-      transition={{ type: "spring", stiffness: 100, damping: 25 }}
+      transition={{ type: "spring", stiffness: 50, damping: 25 }}
     >
       <Icon className={styles.icon} style={{ color: iconColor }} />
       <div>

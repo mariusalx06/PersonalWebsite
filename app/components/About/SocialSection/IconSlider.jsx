@@ -103,7 +103,11 @@ export default function IconSlider({ icons }) {
   return (
     <motion.div
       className={styles.container}
-      style={{ x: `${offsetX}px`, transition: "none" }}
+      style={{
+        x: `${offsetX}px`,
+        transition: "none",
+        cursor: dragging ? "grabbing" : "grab",
+      }}
       drag="x"
       dragConstraints={{ left: -10, right: 10 }}
       onDragStart={handleDragStart}
@@ -121,9 +125,6 @@ export default function IconSlider({ icons }) {
             animate={positions[positionIndexes[index]]}
             variants={iconVariants}
             transition={{ duration: 0.5 }}
-            style={{
-              cursor: isCenter && isMobileState ? "grab" : "default",
-            }}
           >
             <Link
               href={item.link}
@@ -141,22 +142,20 @@ export default function IconSlider({ icons }) {
         );
       })}
 
-      {isMobileState && (
-        <motion.div
-          className={styles.swipeIconWrapper}
-          animate={{
-            x: ["-0%", "25%", "0%", "-25%", "0%"],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
-        >
-          <SwipeIcon className={styles.swipeIcon} />
-        </motion.div>
-      )}
+      <motion.div
+        className={styles.swipeIconWrapper}
+        animate={{
+          x: ["-0%", "25%", "0%", "-25%", "0%"],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut",
+        }}
+      >
+        <SwipeIcon className={styles.swipeIcon} />
+      </motion.div>
 
       {!isMobileState && (
         <div className={styles.buttons}>
