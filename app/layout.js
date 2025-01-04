@@ -10,11 +10,11 @@ import ScrollProgressBar from "./components/General/ScrollProgressBar";
 export const metadata = {
   title: "Marius Calin Portfolio",
   description:
-    "This is Marius's personal website where he's showcasing his full-stack web developer skills (front-end as well as backend)",
+    "This is Marius's personal website where he's showcasing his full stack web developer skills (front-end as well as backend)",
   openGraph: {
     title: "Marius Calin Portfolio",
     description:
-      "Discover Marius's portfolio showcasing his full-stack web development skills, including both front-end and back-end expertise.",
+      "Discover Marius's portfolio showcasing his full stack web development skills, including both front-end and back-end expertise.",
     url: "https://personal-website-nu-navy-83.vercel.app", // to be modified with the correct URL
     siteName: "Marius Calin Portfolio",
     images: [
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Marius Calin Portfolio",
     description:
-      "Explore Marius's portfolio showcasing his full-stack web development expertise.",
+      "Explore Marius's portfolio showcasing his full stack web development expertise.",
     image:
       "https://personal-website-nu-navy-83.vercel.app/mcLogoTwitterCard.png", // To be replaced when finished
   },
@@ -41,12 +41,12 @@ const structuredDataHome = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Marius Calin",
-  jobTitle: "Full-Stack Web Developer",
+  jobTitle: "full stack Web Developer",
   url: metadata.openGraph.url, // Use the url from metadata
   image: "https://personal-website-nu-navy-83.vercel.app/profile.jpg", // To be replaced when finished
   description:
     metadata.description ||
-    "Marius Calin is a full-stack web developer specialized in front-end and back-end technologies.",
+    "Marius Calin is a full stack web developer specialized in front-end and back-end technologies.",
   skills: [
     "JavaScript",
     "Node.js",
@@ -117,7 +117,7 @@ const structuredDataHome = {
       name: "Personal Portfolio Website",
       url: "https://personal-website-nu-navy-83.vercel.app/", // to be modified with the correct URL
       description:
-        "A personal portfolio website showcasing full-stack web development projects, skills, and experience.",
+        "A personal portfolio website showcasing full stack web development projects, skills, and experience.",
       image:
         "https://personal-website-nu-navy-83.vercel.app/websiteSnapshot.png", // to be modified with the final version
       dateCreated: "2025-01-01",
