@@ -8,8 +8,8 @@ export default function RadialOverlay() {
       className={styles.overlay}
       initial={{ y: "-100%" }}
       whileInView={{ y: "0%" }}
-      transition={{ duration: 1 }}
-      viewport={{}}
+      transition={{ duration: 2 }}
+      viewport={{ once: true }}
     />
   );
 }

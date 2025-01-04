@@ -5,6 +5,7 @@ import Navbar from "./components/General/Navigation/Navbar";
 import "./globals.css";
 import styles from "./layout.module.css";
 import Footer from "./components/General/Footer";
+import ScrollProgressBar from "./components/General/ScrollProgressBar";
 
 export const metadata = {
   title: "Marius Calin Portfolio",
@@ -141,7 +142,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
-
+        <ScrollProgressBar />
         <div className={styles.wrapper}>
           <div className={styles.mainContainer}>
             <LeftContainer />
