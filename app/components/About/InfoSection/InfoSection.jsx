@@ -1,4 +1,3 @@
-import AnimatedOverlay from "../../General/AnimatedOverlay.jsx";
 import styles from "./InfoSection.module.css";
 export default function InfoSection() {
   return (
@@ -17,7 +16,6 @@ export default function InfoSection() {
           problem-solving, specializing in{" "}
           <span className={styles.highlight}>Full Stack Web Development</span>.
         </p>
-        <AnimatedOverlay />
       </div>
     </section>
   );

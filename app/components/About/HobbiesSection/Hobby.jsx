@@ -2,6 +2,17 @@
 import { motion } from "framer-motion";
 import styles from "./Hobby.module.css";
 
+const slideVariants = {
+  leftToRight: {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  },
+  rightToLeft: {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  },
+};
+
 export default function Hobby({
   direction,
   Icon,
@@ -10,17 +21,6 @@ export default function Hobby({
   iconColor,
   titleColor,
 }) {
-  const slideVariants = {
-    leftToRight: {
-      hidden: { x: -100, opacity: 0 },
-      visible: { x: 0, opacity: 1 },
-    },
-    rightToLeft: {
-      hidden: { x: 100, opacity: 0 },
-      visible: { x: 0, opacity: 1 },
-    },
-  };
-
   return (
     <motion.div
       className={styles.hobby}

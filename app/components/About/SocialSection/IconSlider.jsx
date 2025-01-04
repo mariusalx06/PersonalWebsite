@@ -115,8 +115,6 @@ export default function IconSlider({ icons }) {
       onDragEnd={handleDragEnd}
     >
       {icons.map((item, index) => {
-        const isCenter = positions[positionIndexes[index]] === "center";
-
         return (
           <motion.div
             key={index}

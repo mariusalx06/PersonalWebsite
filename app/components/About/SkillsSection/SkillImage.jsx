@@ -2,9 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function SkillImage({ src, alt }) {
-  const randomDuration = Math.random() * (2.5 - 1) + 1;
-
+export default function SkillImage({ src, alt, randomDuration }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
