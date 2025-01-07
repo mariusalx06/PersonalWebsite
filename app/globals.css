@@ -14,7 +14,7 @@ body {
   font-family: "Geist Mono", monospace;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(90deg, #1f4529 43%, rgba(244, 236, 230, 1) 43%);
+  background: linear-gradient(90deg, #e6dace 43%, white 43%);
 }
 
 * {
@@ -43,7 +43,7 @@ button {
 
 @media (max-width: 992px) {
   body {
-    background: linear-gradient(90deg, #1f4529 35%, rgba(244, 236, 230, 1) 35%);
+    background: linear-gradient(90deg, #e6dace 35%, white 35%);
     height: auto;
   }
 }

@@ -6,6 +6,7 @@ import "./globals.css";
 import styles from "./layout.module.css";
 import Footer from "./components/General/Footer";
 import ScrollProgressBar from "./components/General/ScrollProgressBar";
+import { PageContext } from "@/app/context/pageContext";
 
 export const metadata = {
   title: "Marius Calin | Full Stack Web Developer",
@@ -146,10 +147,7 @@ export default function RootLayout({ children }) {
         <div className={styles.wrapper}>
           <div className={styles.mainContainer}>
             <LeftContainer />
-            <RightContainer id="rightContainer">
-              {children}
-              <Footer />
-            </RightContainer>
+            <RightContainer id="rightContainer">{children}</RightContainer>
           </div>
         </div>
         <SpeedInsights />

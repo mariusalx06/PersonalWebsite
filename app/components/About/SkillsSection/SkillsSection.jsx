@@ -7,7 +7,7 @@ export default function SkillSection() {
   return (
     <section className={styles.skills}>
       <header>
-        <h2>My Top Skills</h2>
+        <h3>My Top Skills</h3>
       </header>
       <ul>
         {skills.map((skill, index) => (

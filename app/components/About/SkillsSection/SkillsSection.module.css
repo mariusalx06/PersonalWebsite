@@ -3,10 +3,10 @@
   padding: 0rem 1rem;
 }
 
-.skills h2 {
-  font-size: 2rem;
+.skills h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .skills ul {

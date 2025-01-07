@@ -3,13 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  text-align: center;
-  background-color: #e6dace;
+  background-color: #f4ece6;
   color: black;
   width: 475px;
   height: 600px;
-  box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.5),
-    -5px 5px 15px rgba(0, 0, 0, 0.5), 0px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.3),
+    -5px 5px 15px rgba(0, 0, 0, 0.3), 0px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   z-index: 1;
   position: relative;
@@ -35,18 +34,6 @@
 .name {
   margin: 1rem 0rem;
   position: relative;
-}
-
-.descriptionContainer {
-  font-size: 0.9rem;
-  overflow: visible;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.description {
-  font-size: 1.1rem;
-  color: #007bff;
 }
 
 .bottomSide {
@@ -112,6 +99,7 @@
   .leftContainer {
     width: 100%;
     box-shadow: none;
+    border-radius: 0;
   }
 
   .bottomSide {

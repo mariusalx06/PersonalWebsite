@@ -1,0 +1,22 @@
+.welcomeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .welcomeContainer {
+    height: auto;
+    padding-bottom: 1rem;
+  }
+}

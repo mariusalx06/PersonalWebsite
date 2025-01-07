@@ -3,6 +3,8 @@ import styles from "./LeftContainer.module.css";
 import SocialLink from "./SocialLink";
 import socialIconsData from "@/data/socialIconsData";
 import RadialOverlay from "./RadialOverlay";
+import DescriptionContaier from "./DescriptionContainer";
+import PageContextProvider from "@/app/context/pageContext";
 
 export default function LeftContainer() {
   return (
@@ -18,12 +20,9 @@ export default function LeftContainer() {
           priority
         />
         <h1 className={styles.name}>Marius Calin</h1>
-        <p>Welcome to my Portfolio website!</p>
       </header>
-      <div className={styles.descriptionContainer}>
-        <p>&lt;Junior&gt;</p>
-        <p className={styles.description}>Full Stack Web Developer</p>
-      </div>
+
+      <DescriptionContaier />
 
       <div className={styles.bottomSide}>
         {socialIconsData.map(({ Icon, platform, link, ariaLabel }) => (
