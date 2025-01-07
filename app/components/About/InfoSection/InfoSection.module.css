@@ -1,6 +1,6 @@
 .info {
   border-radius: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .about {
@@ -11,13 +11,52 @@
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
 .highlight {
   font-weight: bold;
   color: #295f98;
 }
 
+.codeBlock {
+  padding: 1rem;
+  padding-top: 0;
+  white-space: pre-wrap;
+}
+
+.key {
+  color: #f39c12;
+}
+
+.string {
+  color: #4caf50;
+}
+
+.array {
+  color: #2196f3;
+}
+
+.variable {
+  color: #9b59b6;
+}
+
+.keyword {
+  color: #1abc9c;
+}
+
+.brace {
+  color: #9b59b6;
+}
+
+.lightBlue {
+  color: #03a9f4;
+}
+
 @media (max-width: 768px) {
   .info {
     border-radius: 0;
+  }
+  .about {
+    padding: 1rem;
+    background-color: #f4ece6;
   }
 }

@@ -1,10 +1,11 @@
 .navigationButtons {
   position: absolute;
+  display: flex;
+  justify-content: space-between;
   top: 0.5rem;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
+
   z-index: 10;
 }
 
@@ -19,6 +20,10 @@
   border: none;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.pageContainer {
+  height: 100%;
 }
 
 @media (max-width: 768px) {
