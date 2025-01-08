@@ -11,6 +11,9 @@ import WestIcon from "@mui/icons-material/West";
 
 import AboutContainer from "./components/Container/AboutContainer/AboutContainer";
 import WelcomeContainer from "./components/Container/WelcomeContainer/WelcomeContainer";
+import ContactContainer from "./components/Container/ContactContainer/ContactContaier";
+import ProjectsContainer from "./components/Container/ProjectsContainer/ProjectsContainer";
+import StudiesContainer from "./components/Container/StudiesContainer/StudiesContainer";
 
 export default function Home() {
   const { currentPage, isMobileDevice, goToNextPage, goToPreviousPage } =
@@ -52,11 +55,9 @@ export default function Home() {
         <>
           <WelcomeContainer />
           <AboutContainer />
-          <section className={styles.studiesContainer}>Studies Section</section>
-          <section className={styles.projectsContainer}>
-            Projects Section
-          </section>
-          <section className={styles.contactContainer}>Contact Section</section>
+          <StudiesContainer />
+          <ProjectsContainer />
+          <ContactContainer />
         </>
       ) : (
         <>
@@ -71,21 +72,9 @@ export default function Home() {
             >
               {currentPage === 0 && <WelcomeContainer />}
               {currentPage === 1 && <AboutContainer />}
-              {currentPage === 2 && (
-                <section className={styles.studiesContainer}>
-                  Studies Section
-                </section>
-              )}
-              {currentPage === 3 && (
-                <section className={styles.projectsContainer}>
-                  Projects Section
-                </section>
-              )}
-              {currentPage === 4 && (
-                <section className={styles.contactContainer}>
-                  Contact Section
-                </section>
-              )}
+              {currentPage === 2 && <StudiesContainer />}
+              {currentPage === 3 && <ProjectsContainer />}
+              {currentPage === 4 && <ContactContainer />}
             </motion.div>
           </AnimatePresence>
 

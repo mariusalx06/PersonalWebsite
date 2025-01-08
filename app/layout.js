@@ -1,10 +1,11 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import LeftContainer from "./components/Container/LeftContainer/LeftContainer";
 import RightContainer from "./components/Container/RightContainer/RightContainer";
-import Navbar from "./components/General/Navigation/Navbar";
 import "./globals.css";
 import styles from "./layout.module.css";
 import ScrollProgressBar from "./components/General/ScrollProgressBar";
+import Navbar from "./components/General/Navigation/Navbar";
+import PageContextProvider from "./context/pageContext";
 
 export const metadata = {
   title: "Marius Calin | Full Stack Web Developer",
@@ -140,14 +141,18 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body>
-        <Navbar />
-        <ScrollProgressBar />
-        <div className={styles.wrapper}>
-          <div className={styles.mainContainer}>
-            <LeftContainer />
-            <RightContainer id="rightContainer">{children}</RightContainer>
+        <PageContextProvider>
+          <Navbar />
+
+          <ScrollProgressBar />
+
+          <div className={styles.wrapper}>
+            <div className={styles.mainContainer}>
+              <LeftContainer />
+              <RightContainer id="rightContainer">{children}</RightContainer>
+            </div>
           </div>
-        </div>
+        </PageContextProvider>
         <SpeedInsights />
       </body>
     </html>
