@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useState, useCallback } from "react";
 import { PageContext } from "./context/pageContext";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,39 +15,39 @@ import ContactContainer from "./components/Container/ContactContainer/ContactCon
 import ProjectsContainer from "./components/Container/ProjectsContainer/ProjectsContainer";
 import StudiesContainer from "./components/Container/StudiesContainer/StudiesContainer";
 
+const slideInVariants = {
+  enter: {
+    x: "100%",
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+  display: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 1 },
+  },
+};
+
 export default function Home() {
   const { currentPage, isMobileDevice, goToNextPage, goToPreviousPage } =
     useContext(PageContext);
 
   const [animationDirection, setAnimationDirection] = useState("display");
 
-  const handleNextPage = () => {
+  const handleNextPage = useCallback(() => {
     setAnimationDirection("enter");
     goToNextPage();
-  };
+  }, [goToNextPage]);
 
-  const handlePreviousPage = () => {
+  const handlePreviousPage = useCallback(() => {
     setAnimationDirection("exit");
     goToPreviousPage();
-  };
-
-  const slideInVariants = {
-    enter: {
-      x: "100%",
-      opacity: 0,
-      transition: { duration: 0.5 },
-    },
-    exit: {
-      x: "-100%",
-      opacity: 0,
-      transition: { duration: 0.5 },
-    },
-    display: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 1 },
-    },
-  };
+  }, [goToPreviousPage]);
 
   return (
     <>

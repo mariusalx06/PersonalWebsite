@@ -1,12 +1,13 @@
 "use client";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import SwipeIcon from "@mui/icons-material/Swipe";
 import Link from "next/link";
-import { isMobile } from "react-device-detect";
+
 import styles from "./IconSlider.module.css";
+import { PageContext } from "@/app/context/pageContext";
 
 const positions = ["center", "left1", "left", "right", "right1"];
 
@@ -19,15 +20,11 @@ const iconVariants = {
 };
 
 export default function IconSlider({ icons }) {
+  const { isMobileDevice } = useContext(PageContext); //modified to context
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
-  const [isMobileState, setIsMobileState] = useState(null);
   const [dragging, setDragging] = useState(false);
   const [offsetX, setOffsetX] = useState(0);
   const [thresholdCrossed, setThresholdCrossed] = useState(false);
-
-  useEffect(() => {
-    setIsMobileState(isMobile);
-  }, []);
 
   const updatePositionIndexes = useCallback(
     (direction) => {
@@ -98,7 +95,7 @@ export default function IconSlider({ icons }) {
     };
   }, [dragging]);
 
-  if (isMobileState === null) return null;
+  // if (isMobileDevice === null) return null;
 
   return (
     <motion.div
@@ -161,7 +158,7 @@ export default function IconSlider({ icons }) {
         <SwipeIcon className={styles.swipeIcon} />
       </motion.div>
 
-      {!isMobileState && (
+      {!isMobileDevice && (
         <div className={styles.buttons}>
           <button
             className={styles.iconButton}

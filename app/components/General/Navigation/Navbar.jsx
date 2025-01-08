@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useRef } from "react";
+import { useContext, useCallback } from "react";
 import { PageContext } from "@/app/context/pageContext";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
@@ -15,9 +15,12 @@ export default function Navbar() {
     return null;
   }
 
-  const handleClick = (pageIndex) => {
-    goToPage(pageIndex);
-  };
+  const handleClick = useCallback(
+    (pageIndex) => {
+      goToPage(pageIndex);
+    },
+    [goToPage]
+  );
 
   return (
     <nav className={styles.navigation}>
