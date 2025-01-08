@@ -1,10 +1,15 @@
 .social {
   margin-bottom: 3rem;
   padding: 1rem;
+  background-color: #f4ece6;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -4px 8px rgba(0, 0, 0, 0.1),
+    -4px 0 8px rgba(0, 0, 0, 0.1), 4px 0 8px rgba(0, 0, 0, 0.1);
 }
 
-.social h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
+@media (max-width: 768px) {
+  .social {
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
 }

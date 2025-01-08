@@ -33,9 +33,9 @@ export default function Hobby({
       <Icon className={styles.icon} style={{ color: iconColor }} />
       <div>
         <header>
-          <h3 className={styles.title} style={{ color: titleColor }}>
+          <h4 className={styles.title} style={{ color: titleColor }}>
             {title}
-          </h3>
+          </h4>
         </header>
         <small className={styles.small}>{description}</small>
       </div>

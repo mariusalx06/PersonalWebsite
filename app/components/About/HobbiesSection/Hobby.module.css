@@ -4,13 +4,16 @@
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  width: 40%;
+  width: 47%;
   margin-bottom: 1rem;
-  background-color: #00468c;
+  background-color: #295f98;
   border-radius: 0.5rem;
   color: white;
   padding: 1rem 0.5rem;
   position: relative;
+}
+.hobby h4 {
+  font-size: 1.2rem;
 }
 
 .icon {
@@ -18,12 +21,11 @@
 }
 
 .title {
-  font-size: 1rem;
   color: #7db9e8;
   margin-top: 0.5rem;
 }
 
 .small {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-top: 0.5rem;
 }

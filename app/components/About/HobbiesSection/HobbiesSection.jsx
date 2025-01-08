@@ -29,7 +29,7 @@ export default function HobbiesSection() {
   return (
     <section className={styles.hobbies}>
       <header className={styles.hobbiesHeader}>
-        <h2>Favorite Hobbies</h2>
+        <h3>Favorite Hobbies</h3>
       </header>
 
       {hobbies.map((hobby, index) => (

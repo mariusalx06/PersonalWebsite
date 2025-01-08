@@ -1,4 +1,5 @@
-import SkillImage from "./SkillImage";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./SkillCard.module.css";
 
 export default function SkillCard({ src, alt, skill }) {
@@ -6,10 +7,37 @@ export default function SkillCard({ src, alt, skill }) {
 
   return (
     <li className={styles.skillItem}>
-      <div className={styles.skillContent}>
-        <SkillImage src={src} alt={alt} randomDuration={randomDuration} />
+      <motion.div
+        className={styles.skillContent}
+        initial={{ opacity: 0, scale: 0.6 }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+          transition: {
+            duration: 1.5,
+            ease: "easeOut",
+          },
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: randomDuration,
+              ease: "easeInOut",
+            },
+          }}
+          animate={{
+            scale: 1,
+            transition: { duration: randomDuration, ease: "easeOut" },
+          }}
+        >
+          <Image src={src} alt={alt} width={32} height={32} />
+        </motion.div>
         <p>{skill}</p>
-      </div>
+      </motion.div>
     </li>
   );
 }
