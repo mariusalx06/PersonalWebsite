@@ -18,13 +18,13 @@ const aboutMe = {
 export default function InfoSection() {
   const formatJson = (obj) => {
     return JSON.stringify(obj, null, 2)
-      .replace(/const/g, `<span class="${styles.keyword}">const</span>`) // Color `const`
-      .replace(/aboutMe/g, `<span class="${styles.variable}">aboutMe</span>`) // Color `aboutMe`
-      .replace(/{/g, `<span class="${styles.brace}">{</span>`) // Color `{`
-      .replace(/}/g, `<span class="${styles.brace}">}</span>`) // Color `}`
-      .replace(/"([^"]+)"/g, `<span class="${styles.string}">"$1"</span>`) // Color string values
-      .replace(/\[/g, `<span class="${styles.array}">[</span>`) // Color array brackets
-      .replace(/\]/g, `<span class="${styles.array}">]</span>`); // Color array brackets
+      .replace(/const/g, `<span class="${styles.keyword}">const</span>`)
+      .replace(/aboutMe/g, `<span class="${styles.variable}">aboutMe</span>`)
+      .replace(/{/g, `<span class="${styles.brace}">{</span>`)
+      .replace(/}/g, `<span class="${styles.brace}">}</span>`)
+      .replace(/"([^"]+)"/g, `<span class="${styles.string}">"$1"</span>`)
+      .replace(/\[/g, `<span class="${styles.array}">[</span>`)
+      .replace(/\]/g, `<span class="${styles.array}">]</span>`);
   };
 
   return (
@@ -50,17 +50,6 @@ export default function InfoSection() {
           }}
         />
       </pre>
-      <div className={styles.about}>
-        <p>
-          Holding both a{" "}
-          <span className={styles.highlight}>
-            Bachelor&apos;s and Master&apos;s degree in Computer Science
-          </span>
-          , I possess a solid foundation in software development, algorithms,
-          and problem-solving, with a specialization in{" "}
-          <span className={styles.highlight}>Full Stack Web Development</span>.
-        </p>
-      </div>
     </section>
   );
 }

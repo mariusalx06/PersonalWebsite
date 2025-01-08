@@ -4,9 +4,7 @@ import RightContainer from "./components/Container/RightContainer/RightContainer
 import Navbar from "./components/General/Navigation/Navbar";
 import "./globals.css";
 import styles from "./layout.module.css";
-import Footer from "./components/General/Footer";
 import ScrollProgressBar from "./components/General/ScrollProgressBar";
-import { PageContext } from "@/app/context/pageContext";
 
 export const metadata = {
   title: "Marius Calin | Full Stack Web Developer",

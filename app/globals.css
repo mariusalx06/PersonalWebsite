@@ -48,6 +48,12 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  body {
+    background: transparent;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -90,4 +96,13 @@ scrollbar-thumb:hover {
 
 scrollbar-track {
   background: transparent;
+}
+
+:root {
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 100, 220, 255;
+  --color4: 200, 50, 50;
+  --circle-size: 40%;
+  --blending: hard-light;
 }
