@@ -30,7 +30,7 @@
 }
 
 .string {
-  color: #4caf50;
+  color: #45b28b;
 }
 
 .array {
@@ -50,7 +50,17 @@
 }
 
 .lightBlue {
-  color: #03a9f4;
+  color: #2196f3;
+}
+
+/* Add styles for the emoji flags */
+.emoji {
+  font-size: 24px; /* Adjust the flag size */
+  display: inline-block;
+  margin-right: 5px; /* Optional: spacing between flag and text */
+
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "NotoColorEmoji", "Emoji",
+    sans-serif;
 }
 
 @media (max-width: 768px) {

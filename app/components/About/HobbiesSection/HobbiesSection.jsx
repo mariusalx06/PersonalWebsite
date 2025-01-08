@@ -11,8 +11,8 @@ const hobbies = [
     title: "Skiing",
     description:
       "A new sport I recently discovered and absolutely love for its thrill and adventure.",
-    iconColor: "#7db9e8",
-    titleColor: "#7db9e8",
+    iconColor: "#a1c9e0",
+    titleColor: "#a1c9e0",
   },
   {
     direction: "rightToLeft",
