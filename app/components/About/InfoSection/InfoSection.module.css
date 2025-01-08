@@ -50,22 +50,13 @@
 }
 
 .lightBlue {
-  color: #2196f3;
-}
-
-/* Add styles for the emoji flags */
-.emoji {
-  font-size: 24px; /* Adjust the flag size */
-  display: inline-block;
-  margin-right: 5px; /* Optional: spacing between flag and text */
-
-  font-family: "Segoe UI Emoji", "Apple Color Emoji", "NotoColorEmoji", "Emoji",
-    sans-serif;
+  color: #295f98;
 }
 
 @media (max-width: 768px) {
   .info {
     border-radius: 0;
+    margin-bottom: 0rem;
   }
   .about {
     padding: 1rem;

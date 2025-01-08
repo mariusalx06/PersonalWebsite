@@ -18,7 +18,8 @@
   .welcomeContainer {
     height: auto;
     padding: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
+    background-color: white;
   }
   .header h2 {
     padding: 1rem;

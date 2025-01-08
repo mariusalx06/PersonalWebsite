@@ -6,6 +6,7 @@ import styles from "./layout.module.css";
 import ScrollProgressBar from "./components/General/ScrollProgressBar";
 import Navbar from "./components/General/Navigation/Navbar";
 import PageContextProvider from "./context/pageContext";
+import GradientBackground from "./components/Container/RightContainer/GradientBackground";
 
 export const metadata = {
   title: "Marius Calin | Full Stack Web Developer",
@@ -141,6 +142,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body>
+        <GradientBackground />
         <PageContextProvider>
           <Navbar />
 

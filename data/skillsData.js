@@ -10,7 +10,7 @@ const skills = [
     skill: "Node.js",
   },
   {
-    src: "https://img.icons8.com/color/48/react-native.png",
+    src: "https://img.icons8.com/nolan/64/react-native.png",
     alt: "React Logo",
     skill: "React",
   },

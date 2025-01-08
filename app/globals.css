@@ -14,7 +14,7 @@ body {
   font-family: "Geist Mono", monospace;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(90deg, #e6dace 43%, white 43%);
+  background: linear-gradient(90deg, #d1d9e6 43%, white 43%);
 }
 
 * {
@@ -34,9 +34,6 @@ h6 {
 }
 
 h3 {
-  font-size: 1.5rem;
-}
-h4 {
   font-size: 1.2rem;
 }
 
@@ -50,7 +47,7 @@ button {
 
 @media (max-width: 992px) {
   body {
-    background: linear-gradient(90deg, #e6dace 35%, white 35%);
+    background: linear-gradient(90deg, #d1d9e6 35%, white 35%);
     height: auto;
   }
 }
@@ -67,12 +64,12 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #00468c;
+  background-color: #295f98;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #003a6f;
+  background-color: #295f98;
 }
 
 ::-webkit-scrollbar-track {
@@ -93,12 +90,12 @@ scrollbar {
 }
 
 scrollbar-thumb {
-  background-color: #00468c;
+  background-color: #295f98;
   border-radius: 10px;
 }
 
 scrollbar-thumb:hover {
-  background-color: #003a6f;
+  background-color: #295f98;
 }
 
 scrollbar-track {
@@ -109,7 +106,6 @@ scrollbar-track {
   --color1: 18, 113, 255;
   --color2: 221, 74, 255;
   --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
   --circle-size: 40%;
   --blending: hard-light;
 }

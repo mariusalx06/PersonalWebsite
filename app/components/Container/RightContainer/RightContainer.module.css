@@ -2,7 +2,7 @@
   color: black;
   width: 600px;
   height: 600px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
   position: relative;
 }
@@ -24,6 +24,6 @@
     height: auto;
     overflow-y: auto;
     scroll-behavior: smooth;
-    background-color: white;
+    background-color: #d1d9e6;
   }
 }

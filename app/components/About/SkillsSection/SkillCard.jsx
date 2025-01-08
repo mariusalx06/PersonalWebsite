@@ -20,6 +20,7 @@ export default function SkillCard({ src, alt, skill }) {
         }}
       >
         <motion.div
+          className={styles.imageContainer}
           initial={{ opacity: 0, scale: 0.6 }}
           whileInView={{
             opacity: 1,

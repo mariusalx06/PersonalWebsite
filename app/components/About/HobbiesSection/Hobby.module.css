@@ -6,14 +6,12 @@
   text-align: center;
   width: 47%;
   margin-bottom: 1rem;
-  background-color: #295f98;
+  background-color: #d1d9e6;
   border-radius: 0.5rem;
-  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -4px 8px rgba(0, 0, 0, 0.1),
+    -4px 0 8px rgba(0, 0, 0, 0.1), 4px 0 8px rgba(0, 0, 0, 0.1);
   padding: 1rem 0.5rem;
   position: relative;
-}
-.hobby h4 {
-  font-size: 1.2rem;
 }
 
 .icon {
@@ -21,11 +19,15 @@
 }
 
 .title {
-  color: #7db9e8;
   margin-top: 0.5rem;
 }
 
 .small {
   font-size: 0.8rem;
   margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .hobby {
+    background-color: white;
+  }
 }

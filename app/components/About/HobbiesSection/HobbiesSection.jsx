@@ -11,8 +11,8 @@ const hobbies = [
     title: "Skiing",
     description:
       "A new sport I recently discovered and absolutely love for its thrill and adventure.",
-    iconColor: "#a1c9e0",
-    titleColor: "#a1c9e0",
+    iconColor: "#295f98",
+    titleColor: "#295f98",
   },
   {
     direction: "rightToLeft",
@@ -29,7 +29,7 @@ export default function HobbiesSection() {
   return (
     <section className={styles.hobbies}>
       <header className={styles.hobbiesHeader}>
-        <h3>Favorite Hobbies</h3>
+        <h2>Favorite Hobbies</h2>
       </header>
 
       {hobbies.map((hobby, index) => (

@@ -119,6 +119,12 @@ export default function IconSlider({ icons }) {
           <motion.div
             key={index}
             className={styles.icon}
+            style={{
+              backgroundColor:
+                positions[positionIndexes[index]] !== "center"
+                  ? "#d1d9e6"
+                  : "white",
+            }}
             initial="center"
             animate={positions[positionIndexes[index]]}
             variants={iconVariants}

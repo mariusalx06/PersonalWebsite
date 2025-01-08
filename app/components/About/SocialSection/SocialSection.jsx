@@ -6,7 +6,7 @@ export default function SocialSection() {
   return (
     <section className={styles.social}>
       <header>
-        <h3>Social Media</h3>
+        <h2>Social Media</h2>
       </header>
       <IconSlider icons={socialIconsData} />
     </section>

@@ -31,7 +31,7 @@
 
   width: var(--circle-size);
   height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
+  top: calc(30% - var(--circle-size) / 2);
 
   transform-origin: center center;
   animation: moveVertical 30s ease infinite;
@@ -49,7 +49,7 @@
 
   width: var(--circle-size);
   height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
+  top: calc(30% - var(--circle-size) / 2);
 
   transform-origin: calc(50% - 100px);
   animation: moveInCircle 20s reverse infinite;
@@ -67,7 +67,7 @@
 
   width: var(--circle-size);
   height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2 + 100px);
+  top: calc(30% - var(--circle-size) / 2 + 100px);
 
   transform-origin: calc(50% + 100px);
   animation: moveInCircle 40s linear infinite;
@@ -78,8 +78,8 @@
 .g4 {
   background: radial-gradient(
       circle at center,
-      rgba(var(--color4), 0.8) 0,
-      rgba(var(--color4), 0) 50%
+      rgba(var(--color2), 0.8) 0,
+      rgba(var(--color2), 0) 50%
     )
     no-repeat;
 
@@ -87,7 +87,7 @@
   height: var(--circle-size);
   top: calc(50% - var(--circle-size) / 2);
 
-  transform-origin: calc(50% - 200px);
+  transform-origin: calc(30% - 200px);
   animation: moveHorizontal 40s ease infinite;
 
   opacity: 0.7;
@@ -99,7 +99,7 @@
 .g4 {
   position: absolute;
   mix-blend-mode: var(--blending);
-  left: calc(30%);
+  left: calc(40%);
 }
 
 @keyframes moveInCircle {

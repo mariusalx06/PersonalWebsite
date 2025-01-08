@@ -1,5 +1,5 @@
 .hobbies {
-  background-color: #f4ece6;
+  background-color: #a2c6e6;
   padding: 1rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
@@ -20,5 +20,6 @@
   .hobbies {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #a2c6e6;
   }
 }

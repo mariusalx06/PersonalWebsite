@@ -38,7 +38,11 @@
   margin: 0;
   cursor: pointer;
   color: white;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.navButtons button:hover {
+  scale: 0.8;
 }
 
 .navButtons button:hover .iconWrapper {

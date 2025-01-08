@@ -9,7 +9,7 @@
 .icon {
   border-radius: 1rem;
   position: absolute;
-  background-color: #d1d9e6;
+
   padding: 0.3rem;
 }
 
@@ -77,4 +77,9 @@
 
 .mail {
   color: #008080;
+}
+@media (max-width: 768px) {
+  .icon {
+    background-color: white;
+  }
 }
